@@ -67,7 +67,7 @@ public class BlackJack : MonoBehaviour
     public int MakeHand(HandNums cards, Hand total)
     {
         cout<<"Make Hand Called">>
-        return cards.DrawHand(cardsVal[],cardsVal[], Hand), total;
+        return cards.DrawHand(cardsVal[],cardsVal[], Hand);
     }
 
     private int DrawHand(int[] CardOne, int[] CardTwo, int total)
@@ -82,8 +82,38 @@ public class BlackJack : MonoBehaviour
 
     private ApplyEffect(int HandTotal)
     {
+        if (HandTotal<=6)
+        {
+            return null;
+        }else if (HandTotal>=7&&HandTotal<=9)
+        {
+            Buffs.Chance(100);
+            Buffs.Damage(2);
+        }else if (HandTotal>=10&&HandTotal<=12)
+        {
+            Buffs.Chance(15);
+            Buffs.Burn(1,2);
+            Buffs.Damage(3);
+        }else if (HandTotal>=13&&HandTotal<=17)
+        {
+            Buffs.Chance(25);
+            Buffs.Burn(2, 3);
+            Buffs.Damage(5);
+        }else if (HandTotal >= 18 && HandTotal <= 20)
+        {
+            Buffs.Chance(50);
+            Buffs.Burn(3, 4);
+            Buffs.Damage(6);
+        }else if (HandTotal == 21)
+        {
+            Buffs.Chance(100);
+            Buffs.Burn(4, 5);
+            Buffs.Damage(12);
+        }else if (HandTotal>=22)
+        {
+            return null;
+        }
         cout<<"Apply Effect Called">>
-        
     }
     // Start is called before the first frame update
     void Start()
