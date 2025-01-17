@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d34f3843-2530-4ac3-97cd-6e603d2762ad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/BlackJack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlackJack.cs" afterDir="false" />
-    </list>
+    <list default="true" id="d34f3843-2530-4ac3-97cd-6e603d2762ad" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +50,7 @@
       <updated>1736973633870</updated>
       <workItem from="1736973635880" duration="608000" />
       <workItem from="1737049455087" duration="1944000" />
-      <workItem from="1737056943601" duration="5924000" />
+      <workItem from="1737056943601" duration="6164000" />
     </task>
     <servers />
   </component>
