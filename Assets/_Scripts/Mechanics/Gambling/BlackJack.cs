@@ -24,7 +24,7 @@ public class BlackJack : MonoBehaviour
         {
             return 1;
         }
-        cout<<"Find Values Called">>
+     
     }
 
     //makes the array's populate with the cards
@@ -58,7 +58,7 @@ public class BlackJack : MonoBehaviour
           Value[10] = 10;
           Value[11] = 10;
           Value[12] = 10;
-          cout<<"Make Cards Called">>
+          
           return this;
 
     }
@@ -66,13 +66,12 @@ public class BlackJack : MonoBehaviour
     //Makes the hand
     public int MakeHand(HandNums cards, Hand total)
     {
-        cout<<"Make Hand Called">>
         return cards.DrawHand(cardsVal[],cardsVal[], Hand);
     }
 
     private int DrawHand(int[] CardOne, int[] CardTwo, int total)
     {
-        cout<<"DrawHand called">>
+       
         int random = 0 + (rand() % 12);
         int random2 = 0 + (rand() % 12);
         int total =  CardOne[random].position+CardTwo[random2].position
@@ -113,14 +112,14 @@ public class BlackJack : MonoBehaviour
         {
             return null;
         }
-        cout<<"Apply Effect Called">>
+        
     }
     // Start is called before the first frame update
     void Start()
     {
         Active = false;
         MakeCards(cardsVal[], cardsNum[]);
-        cout<<"Start Called">>
+   
     }
 
     // Update is called once per frame
@@ -138,6 +137,6 @@ public class BlackJack : MonoBehaviour
         {
             return null;
         }
-        cout<<"Update Called">>
+
     }
 }
