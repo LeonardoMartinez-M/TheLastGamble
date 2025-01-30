@@ -89,6 +89,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability"",
+                    ""type"": ""Button"",
+                    ""id"": ""465c219f-0ff0-4f10-9411-cbfa36198321"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""78a90f44-2211-4466-b701-e76a22fbd2f0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -194,7 +212,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""85395344-9c0c-4180-88b8-3230a9ceaef5"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""path"": ""<Keyboard>/backquote"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -212,6 +230,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""027101af-c942-4e73-af0c-d2c39febdee6"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ability"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""284fb173-f649-490d-9611-b991caca0aea"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -227,6 +267,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Locomotion_Reload = m_Locomotion.FindAction("Reload", throwIfNotFound: true);
         m_Locomotion_Funky = m_Locomotion.FindAction("Funky", throwIfNotFound: true);
         m_Locomotion_Look = m_Locomotion.FindAction("Look", throwIfNotFound: true);
+        m_Locomotion_Ability = m_Locomotion.FindAction("Ability", throwIfNotFound: true);
+        m_Locomotion_Jump = m_Locomotion.FindAction("Jump", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -295,6 +337,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Locomotion_Reload;
     private readonly InputAction m_Locomotion_Funky;
     private readonly InputAction m_Locomotion_Look;
+    private readonly InputAction m_Locomotion_Ability;
+    private readonly InputAction m_Locomotion_Jump;
     public struct LocomotionActions
     {
         private @Controls m_Wrapper;
@@ -306,6 +350,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Reload => m_Wrapper.m_Locomotion_Reload;
         public InputAction @Funky => m_Wrapper.m_Locomotion_Funky;
         public InputAction @Look => m_Wrapper.m_Locomotion_Look;
+        public InputAction @Ability => m_Wrapper.m_Locomotion_Ability;
+        public InputAction @Jump => m_Wrapper.m_Locomotion_Jump;
         public InputActionMap Get() { return m_Wrapper.m_Locomotion; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -336,6 +382,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
+            @Ability.started += instance.OnAbility;
+            @Ability.performed += instance.OnAbility;
+            @Ability.canceled += instance.OnAbility;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
         }
 
         private void UnregisterCallbacks(ILocomotionActions instance)
@@ -361,6 +413,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
+            @Ability.started -= instance.OnAbility;
+            @Ability.performed -= instance.OnAbility;
+            @Ability.canceled -= instance.OnAbility;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
         }
 
         public void RemoveCallbacks(ILocomotionActions instance)
@@ -387,5 +445,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnReload(InputAction.CallbackContext context);
         void OnFunky(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnAbility(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
 }

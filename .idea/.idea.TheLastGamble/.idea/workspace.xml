@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="bb8e9f49-6ce7-4a34-b84c-63c84bc72581" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TheLastGamble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TheLastGamble/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Leo test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Leo test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Gambling/BlackJack.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Gambling/BlackJack.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Movement/Controller.inputactions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Movement/Controller.inputactions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Movement/Controls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Movement/Controls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Movement/Controls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Movement/Controls.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Movement/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Movement/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,6 +92,8 @@
       <workItem from="1736973782646" duration="411000" />
       <workItem from="1736974205988" duration="1363000" />
       <workItem from="1737145339345" duration="2780000" />
+      <workItem from="1737750126842" duration="3940000" />
+      <workItem from="1738095114477" duration="3353000" />
     </task>
     <servers />
   </component>
