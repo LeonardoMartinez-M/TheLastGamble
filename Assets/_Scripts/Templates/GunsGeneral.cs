@@ -12,9 +12,10 @@ public abstract class GunsGeneral : MonoBehaviour
     [SerializeField] protected int Sway;
     [SerializeField] protected int Recoil;
 
-
+    private InputManager _input;
     private void Awake()
     {
+        _input = InputManager.instance;
         Active = false;
     }
 
