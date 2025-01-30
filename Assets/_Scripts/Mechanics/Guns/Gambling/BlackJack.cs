@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
-public class BlackJack : MonoBehaviour
+public class BlackJack : GunsGeneral
 {
     // make a variable for input manager
     // declare two cards
@@ -74,5 +74,10 @@ public class BlackJack : MonoBehaviour
         }
 
          */
+    }
+
+    public override void ApplyEffect()
+    {
+        throw new NotImplementedException();
     }
 }

@@ -6,22 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d34f3843-2530-4ac3-97cd-6e603d2762ad" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../../../.idea/.idea.TheLastGamble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.idea/.idea.TheLastGamble/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Readme.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Readme.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../TutorialInfo.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../TutorialInfo/Icons.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../TutorialInfo/Icons/URP.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../TutorialInfo/Icons/URP.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../TutorialInfo/Layout.wlt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../TutorialInfo/Layout.wlt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../TutorialInfo/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../TutorialInfo/Scripts/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../TutorialInfo/Scripts/Editor/ReadmeEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../TutorialInfo/Scripts/Editor/ReadmeEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../TutorialInfo/Scripts/Readme.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../TutorialInfo/Scripts/Readme.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Gambling.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gambling.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Scenes/ReyesSide.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Scenes/ReyesSide.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlackJack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlackJack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Guns/GunsGeneral.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Guns/GunsGeneral.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +65,7 @@
       <workItem from="1737577634557" duration="207000" />
       <workItem from="1737750040840" duration="804000" />
       <workItem from="1738095531465" duration="45000" />
+      <workItem from="1738256957421" duration="189000" />
     </task>
     <servers />
   </component>

@@ -1,31 +1,38 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using 
-public class GunsGeneral : MonoBehaviour
+using UnityEngine.InputSystem;
+public abstract class GunsGeneral : MonoBehaviour
 {
-    public enum gamblings
+    protected bool Active;
+    [SerializeField] protected int Damage;
+    [SerializeField] protected int ADSSway;
+    [SerializeField] protected int Sway;
+    [SerializeField] protected int Recoil;
+
+
+    private void Awake()
     {
-        BlackJack,
-        Poker,
-        Baccarat,
-        Roullette,
-        RussianRoullette,
-        Slots
-    };
-    [SerializeField] private Buffs Buffs;
-    [SerializeField] private gamblings Gambling;
-    [SerializeField] private InputManager Controls;
+        Active = false;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        if (Active == true)
+        {
+            return;
+        }
         
-    }
+        }
 
     // Update is called once per frame
     void Update()
     {
         
     }
+
+    public abstract void ApplyEffect();
 }
