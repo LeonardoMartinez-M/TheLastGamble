@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d34f3843-2530-4ac3-97cd-6e603d2762ad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Gambling.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gambling.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.idea/.idea.TheLastGamble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.idea/.idea.TheLastGamble/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Scenes/ReyesSide.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Scenes/ReyesSide.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlackJack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlackJack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Guns/GunsGeneral.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Guns/GunsGeneral.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,27 +27,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\rs14561\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\rs14561\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\rs14561\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\rs14561\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\rs14561\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\rs14561\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -56,7 +58,14 @@
       <updated>1736973633870</updated>
       <workItem from="1736973635880" duration="608000" />
       <workItem from="1737049455087" duration="1944000" />
-      <workItem from="1737056943601" duration="6551000" />
+      <workItem from="1737056943601" duration="10581000" />
+      <workItem from="1737490380308" duration="702000" />
+      <workItem from="1737491099903" duration="72000" />
+      <workItem from="1737491183265" duration="1804000" />
+      <workItem from="1737577634557" duration="207000" />
+      <workItem from="1737750040840" duration="804000" />
+      <workItem from="1738095531465" duration="45000" />
+      <workItem from="1738256957421" duration="189000" />
     </task>
     <servers />
   </component>

@@ -1,8 +1,8 @@
 {
-    "name": "Controller",
+    "name": "Controls",
     "maps": [
         {
-            "name": "Controller",
+            "name": "Locomotion",
             "id": "d304ec40-8909-41c0-b6d8-c2ba7b2c7904",
             "actions": [
                 {
@@ -55,6 +55,15 @@
                     "type": "Button",
                     "id": "b87c6ff6-46a6-4f52-a14c-61cae71ce906",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Look",
+                    "type": "PassThrough",
+                    "id": "3b8492e8-6260-48e5-b12f-20249cb0b61c",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -168,6 +177,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Funky",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9bf57349-a1f7-4c38-b0dd-d247d07b55b1",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
