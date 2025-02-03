@@ -23,7 +23,7 @@ public class BlackJack : GunsGeneral
             throw new NotImplementedException();
         }
 
-        private object ApplyEffect(int handTotal)
+        private static object ApplyEffect(int handTotal)
     {
         switch (handTotal)
         {
@@ -65,6 +65,8 @@ public class BlackJack : GunsGeneral
                  Buffs.Burn (4, 5);
                  Buffs.Damage(12);
                 break;
+             case 22:
+                 return handTotal;
         }
     }
 }

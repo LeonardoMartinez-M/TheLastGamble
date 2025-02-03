@@ -8,8 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TheLastGamble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TheLastGamble/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Buffs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Buffs.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/Gambling/BlackJack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/Gambling/BlackJack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/GunsGeneral.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/GunsGeneral.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +94,8 @@
       <workItem from="1736974205988" duration="1363000" />
       <workItem from="1737145339345" duration="2780000" />
       <workItem from="1738257149683" duration="3085000" />
-      <workItem from="1738268458763" duration="2820000" />
+      <workItem from="1738268458763" duration="2964000" />
+      <workItem from="1738611009393" duration="902000" />
     </task>
     <servers />
   </component>
