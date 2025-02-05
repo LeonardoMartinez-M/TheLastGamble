@@ -35,5 +35,5 @@ public abstract class GunsGeneral : MonoBehaviour
         
     }
 
-    public abstract void ApplyEffect();
+    public abstract object ApplyEffect(int handTotal);
 }

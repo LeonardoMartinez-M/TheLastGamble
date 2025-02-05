@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="bb8e9f49-6ce7-4a34-b84c-63c84bc72581" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TheLastGamble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TheLastGamble/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Buffs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Buffs.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/Gambling/BlackJack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/Gambling/BlackJack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/Gambling/CardData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/Gambling/CardData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Templates/GunsGeneral.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Templates/GunsGeneral.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,10 +72,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1536">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="1536" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -96,6 +97,7 @@
       <workItem from="1738257149683" duration="3085000" />
       <workItem from="1738268458763" duration="2964000" />
       <workItem from="1738611009393" duration="902000" />
+      <workItem from="1738788658577" duration="1507000" />
     </task>
     <servers />
   </component>
@@ -106,5 +108,12 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint log-message="true" type="DotNet Exception Breakpoints" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
