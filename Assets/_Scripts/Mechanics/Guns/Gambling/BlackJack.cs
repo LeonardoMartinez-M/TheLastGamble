@@ -13,7 +13,7 @@ public class BlackJack : GunsGeneral
         Debug.Log(ApplyEffect(_cardA.GetBlackjackValue() + _cardB.GetBlackjackValue()));
         ApplyEffect(_cardA.GetBlackjackValue() + _cardB.GetBlackjackValue());
     }
-    
+
 
     public override object ApplyEffect(int handTotal)
     {
@@ -25,7 +25,7 @@ public class BlackJack : GunsGeneral
                 break;
             case 7:
             case 8:
-            case 9::
+            case 9:
                 Buffs.Chance(100);
                 Buffs.Damage(2);
                 break;
@@ -67,3 +67,4 @@ public class BlackJack : GunsGeneral
 
     }
 }
+    

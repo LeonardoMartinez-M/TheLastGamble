@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 public class Buffs : MonoBehaviour
 {
-    public static void Chance(int Possibility)
+    public static void Chance(long Possibility)
     {
         Debug.Log(Possibility);
         return;
