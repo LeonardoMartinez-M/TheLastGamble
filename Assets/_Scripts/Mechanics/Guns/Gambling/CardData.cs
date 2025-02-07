@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using System;
 
 public class CardData
@@ -8,7 +10,7 @@ public class CardData
         Diamond,
         Hearts,
         Spades
-    }
+    };
 
     public enum Face
     {
@@ -25,7 +27,7 @@ public class CardData
         Queen = 10,
         King = 10,
         Ace = 11
-    }
+    };
     
     private Face _face;
     private Suit _suit;
@@ -41,8 +43,8 @@ public class CardData
     
     public CardData(Face face, Suit suit)
     {
-        _face = face;
-        _suit = suit;
+        this._face = face;
+        this._suit = suit;
     }
 
     public int GetBlackjackValue()
