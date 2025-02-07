@@ -15,7 +15,7 @@ public abstract class GunsGeneral : MonoBehaviour
     private InputManager _input;
     private void Awake()
     {
-        _input = InputManager.instance;
+      
         Active = false;
     }
 
