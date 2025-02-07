@@ -15,6 +15,10 @@ public abstract class GunsGeneral : MonoBehaviour
 
     private void Awake()
     {
+<<<<<<< HEAD:Assets/_Scripts/Mechanics/Guns/GunsGeneral.cs
+=======
+      
+>>>>>>> Reyes:Assets/_Scripts/Templates/GunsGeneral.cs
         Active = false;
     }
 

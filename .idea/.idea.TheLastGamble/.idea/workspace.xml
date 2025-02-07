@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="bb8e9f49-6ce7-4a34-b84c-63c84bc72581" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TheLastGamble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TheLastGamble/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/GunController.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/GunController.cs.meta" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/GunController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/GunController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Templates/GunsGeneral.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Templates/GunsGeneral.cs" afterDir="false" />
+>>>>>>> Reyes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +99,11 @@
       <workItem from="1738257149683" duration="3085000" />
       <workItem from="1738269846103" duration="2083000" />
       <workItem from="1738788400674" duration="2704000" />
+<<<<<<< HEAD
       <workItem from="1738958950026" duration="2944000" />
+=======
+      <workItem from="1738958950026" duration="2332000" />
+>>>>>>> Reyes
     </task>
     <servers />
   </component>
