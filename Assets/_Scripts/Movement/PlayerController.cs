@@ -1,79 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Globalization;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    private InputManager _input;
-    private CharacterController _controller;
-    
-    [SerializeField] private float speed = 5;
-    
-    void Start()
-    {
+    [SerializeField]
+    private float playerSpeed = 2.0f;
+    [SerializeField]
+    private float jumpHeight = 1.0f;
+    [SerializeField]
+    private bool groundedPlayer;
         
-        _input = InputManager.instance;
-        _controller = GetComponent<CharacterController>();
-        _input.FireAction.performed += FireActionOnperformed;
-        _input.SprintAction.performed += SprintActionOnperformed;
-        _input.AimAction.performed += AimActionOnperformed;
-        _input.FunkyAction.performed += FunkyActionOnperformed;
-        _input.ReloadAction.performed += ReloadActionOnperformed;
-        _input.AbilityAction.performed += AbilityActionOnperformed;
-        _input.JumpAction.performed += JumpActionOnperformed;
+    private CharacterController controller;
+    private Vector3 playerVelocity;
+    private float gravityValue = -9.81f;
+    private InputManager inputManager;
+    private Transform cameraTransform;
+
+    private void Start()
+    {
+        controller = GetComponent<CharacterController>();
+        inputManager = InputManager._instance;
+        cameraTransform = Camera.main.transform;
     }
 
-    
-
-
-    #region Buttons
-    
-    private void ReloadActionOnperformed(InputAction.CallbackContext obj)
-    {
-        Debug.Log("reload");
-    }
-
-    private void JumpActionOnperformed(InputAction.CallbackContext obj)
-    {
-        
-    }
-    private void FunkyActionOnperformed(InputAction.CallbackContext obj)
-    {
-        Debug.Log("Funks");
-    }
-
-    private void AimActionOnperformed(InputAction.CallbackContext obj)
-    {
-        Debug.Log("Aim");
-    }
-
-    private void SprintActionOnperformed(InputAction.CallbackContext obj)
-    {
-        Debug.Log("Run");
-    }
-    
-    private void FireActionOnperformed(InputAction.CallbackContext obj)
-    {
-        Debug.Log("Shoot");
-    }
-    private void AbilityActionOnperformed(InputAction.CallbackContext obj)
-    {
-        Debug.Log("Ability");
-    }
-    
-    #endregion
-    
     void Update()
     {
-        HandleMovement(Time.deltaTime);
-    }
+        groundedPlayer = controller.isGrounded;
+        if (groundedPlayer && playerVelocity.y < 0)
+        {
+            playerVelocity.y = 0f;
+        }
 
-    private void HandleMovement(float delta)
-    {
-        Vector3 moveDir = (_input.Move.x * transform.right) + (_input.Move.y * transform.forward);
-        _controller.Move(moveDir * (speed * delta));
+        Vector2 movement = inputManager.GetPlayerMovement();
+        Vector3 move = new Vector3(movement.x, 0f, movement.y);
+        move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
+        move.y = 0f;
+        controller.Move(move * Time.deltaTime * playerSpeed);
+
+        if (move != Vector3.zero)
+        {
+            gameObject.transform.forward = move;
+        }
+
+        // Makes the player jump
+        if (inputManager.PlayerJumpedThisFrame() && groundedPlayer)
+        {
+            playerVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+        }
+
+        playerVelocity.y += gravityValue * Time.deltaTime;
+        controller.Move(playerVelocity * Time.deltaTime);
     }
-    
 }

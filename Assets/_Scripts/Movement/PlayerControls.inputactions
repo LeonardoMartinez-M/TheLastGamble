@@ -2,7 +2,7 @@
     "name": "Controls",
     "maps": [
         {
-            "name": "Locomotion",
+            "name": "Player",
             "id": "d304ec40-8909-41c0-b6d8-c2ba7b2c7904",
             "actions": [
                 {
