@@ -23,7 +23,7 @@ public class GunData : ScriptableObject
     public Vector3 aimPosition;
     // burst size
     public int burstSize = -1;
-
+ 
     [Header("Recoil Stats")]
     // bloom
     public float hipBloom;
