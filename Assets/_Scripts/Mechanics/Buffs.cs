@@ -10,13 +10,13 @@ public class Buffs : MonoBehaviour
         return;
     }
 
-    public static void Damage(int Damage)
+    public static void Damage(double Damage)
     {
         Debug.Log(Damage);
         return;
     }
 
-    public static void Burn(int Severity,int TimeLasted)
+    public static void Burn(int Severity,float TimeLasted)
     {
         Debug.Log(Severity);
         Debug.Log(TimeLasted);
@@ -52,7 +52,36 @@ public class Buffs : MonoBehaviour
     {
         
     }
-        // Start is called before the first frame update
+
+    public static void SelfDamage(int percentdamage)
+    {
+        
+    }
+    
+    public static void Stun(int duration)
+    {
+        return;
+    }
+
+    public static void Disempair(int severity, int Duration)
+    {
+        return;
+    }
+    public static void Blunderbuss(int type)
+    {
+        switch (type)
+        {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+        }
+    }
+    // Start is called before the first frame update
     void Start()
     {
         
@@ -63,4 +92,5 @@ public class Buffs : MonoBehaviour
     {
         
     }
+    
 }

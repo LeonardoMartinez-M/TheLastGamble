@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using Debug = System.Diagnostics.Debug;
@@ -40,10 +41,14 @@ void makeHand()
     {
         makeHand();  // Create random cards
         HandRank hand = EvaluateHand(new List<CardData> { cardOne, cardTwo, cardThree, cardFour, cardFive });
+        
+        ApplyEffect((int)hand);
         Debug.Fail("Hand Rank: " + hand);
     }
-    
 
+   
+    
+    
     HandRank EvaluateHand(List<CardData> cards)
     {
         // Step 1: Sort the cards by face (rank)
@@ -115,7 +120,46 @@ void makeHand()
 
 public override object ApplyEffect(int handTotal)
     {
-        throw new System.NotImplementedException();
+        switch (handTotal)
+        {
+            case 1:
+                Buffs.Blunderbuss(1);
+                Buffs.Disempair(5, 10);
+                break;
+            case 2:
+                Buffs.Blunderbuss(2);
+                Buffs.SelfDamage(5);
+                break;
+            case 3:
+                Buffs.Damage(Damage*4);
+                Buffs.Burn(3,10f);
+                break;
+            case 4:
+                Buffs.Chance(25);
+                Buffs.Blunderbuss(3);
+                Buffs.Stun(4);
+                break;
+            case 5:
+                Buffs.Blunderbuss(4);
+                Buffs.Burn(2,10f);
+                break;
+            case 6:
+                Buffs.Damage(Damage*3);
+                break;
+            case 7:
+                Buffs.Damage(Damage*2.5);
+                break;
+            case 8:
+                Buffs.Damage(Damage*2);
+                break;
+            case 9:
+                Buffs.Damage(Damage * 1.5);
+                break;
+            case 10:
+                break;
+        }
+
+        return handTotal;
     }
 }
 
