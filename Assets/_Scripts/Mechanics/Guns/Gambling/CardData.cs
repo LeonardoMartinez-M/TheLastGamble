@@ -24,8 +24,8 @@ public class CardData
         Seven,
         Eight,
         Nine,
-        Ten,
-<<<<<<< HEAD
+        Ten, 
+        HEAD,
         Jack,
         Queen,
         King,
@@ -47,15 +47,8 @@ public class CardData
         King=10,
         Ace=11
     }
-    // Private fields to store the face and suit
-=======
-        Jack = 10,
-        Queen = 10,
-        King = 10,
-        Ace = 11
-    };
-    
->>>>>>> Leo
+  
+
     private Face _face;
     private FaceBj _faceBj;
     private Suit _suit;
@@ -77,12 +70,9 @@ public class CardData
     // Getter methods for face and suit
     public Face GetFace()
     {
-<<<<<<< HEAD
         return _face;
-=======
         this._face = face;
         this._suit = suit;
->>>>>>> Leo
     }
 
     public Suit GetSuit()

@@ -8,25 +8,16 @@ public class Buffs : MonoBehaviour
     {
         
     }
-
-<<<<<<< HEAD
+    
     public static void Damage(double Damage)
-=======
-    public void Damage()
->>>>>>> Leo
     {
         
     }
 
-<<<<<<< HEAD
-    public static void Burn(int Severity,float TimeLasted)
-=======
-    public void Burn()
->>>>>>> Leo
-    {
-        
-    }
-
+    public static void Burn(int Severity, float TimeLasted)
+{
+    
+}
     public void RapidFire()
     {
         

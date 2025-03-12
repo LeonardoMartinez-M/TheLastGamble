@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb8e9f49-6ce7-4a34-b84c-63c84bc72581" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TheLastGamble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TheLastGamble/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/GunController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/GunController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Buffs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Buffs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/Gambling/CardData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/Gambling/CardData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/GunsGeneral.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/GunsGeneral.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
