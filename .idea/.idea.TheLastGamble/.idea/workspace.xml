@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb8e9f49-6ce7-4a34-b84c-63c84bc72581" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TheLastGamble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TheLastGamble/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Buffs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Buffs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/Gambling/Poker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Mechanics/Guns/Gambling/Poker.cs" afterDir="false" />
-    </list>
+    <list default="true" id="bb8e9f49-6ce7-4a34-b84c-63c84bc72581" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +97,7 @@
       <workItem from="1740774177212" duration="1285000" />
       <workItem from="1741119139163" duration="1717000" />
       <workItem from="1741292659303" duration="3914000" />
-      <workItem from="1741631223374" duration="3255000" />
+      <workItem from="1741631223374" duration="3365000" />
     </task>
     <servers />
   </component>
