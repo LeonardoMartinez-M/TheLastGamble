@@ -12,10 +12,13 @@ public abstract class GunsGeneral : MonoBehaviour
     [SerializeField] protected int Sway;
     [SerializeField] protected int Recoil;
 
-    private InputManager _input;
+
     private void Awake()
     {
+<<<<<<< HEAD:Assets/_Scripts/Templates/GunsGeneral.cs
       
+=======
+>>>>>>> Leo:Assets/_Scripts/Mechanics/Guns/GunsGeneral.cs
         Active = false;
     }
 
@@ -35,5 +38,5 @@ public abstract class GunsGeneral : MonoBehaviour
         
     }
 
-    public abstract object ApplyEffect(int handTotal);
+    public abstract void ApplyEffect();
 }

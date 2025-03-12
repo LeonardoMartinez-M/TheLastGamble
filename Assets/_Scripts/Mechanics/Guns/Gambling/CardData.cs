@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using System;
 
 
@@ -10,7 +12,7 @@ public class CardData
         Diamond,
         Hearts,
         Spades
-    }
+    };
 
     public enum Face
     {
@@ -23,6 +25,7 @@ public class CardData
         Eight,
         Nine,
         Ten,
+<<<<<<< HEAD
         Jack,
         Queen,
         King,
@@ -45,6 +48,14 @@ public class CardData
         Ace=11
     }
     // Private fields to store the face and suit
+=======
+        Jack = 10,
+        Queen = 10,
+        King = 10,
+        Ace = 11
+    };
+    
+>>>>>>> Leo
     private Face _face;
     private FaceBj _faceBj;
     private Suit _suit;
@@ -66,7 +77,12 @@ public class CardData
     // Getter methods for face and suit
     public Face GetFace()
     {
+<<<<<<< HEAD
         return _face;
+=======
+        this._face = face;
+        this._suit = suit;
+>>>>>>> Leo
     }
 
     public Suit GetSuit()

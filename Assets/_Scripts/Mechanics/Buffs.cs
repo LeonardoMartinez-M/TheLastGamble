@@ -4,23 +4,27 @@ using Unity.VisualScripting;
 using UnityEngine;
 public class Buffs : MonoBehaviour
 {
-    public static void Chance(long Possibility)
+    public void Chance()
     {
-        Debug.Log(Possibility);
-        return;
+        
     }
 
+<<<<<<< HEAD
     public static void Damage(double Damage)
+=======
+    public void Damage()
+>>>>>>> Leo
     {
-        Debug.Log(Damage);
-        return;
+        
     }
 
+<<<<<<< HEAD
     public static void Burn(int Severity,float TimeLasted)
+=======
+    public void Burn()
+>>>>>>> Leo
     {
-        Debug.Log(Severity);
-        Debug.Log(TimeLasted);
-        return;
+        
     }
 
     public void RapidFire()
