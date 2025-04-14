@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System;
 
 
@@ -25,7 +23,7 @@ public class CardData
         Eight,
         Nine,
         Ten, 
-        HEAD,
+        Head,
         Jack,
         Queen,
         King,
@@ -71,8 +69,7 @@ public class CardData
     public Face GetFace()
     {
         return _face;
-        this._face = face;
-        this._suit = suit;
+        
     }
 
     public Suit GetSuit()

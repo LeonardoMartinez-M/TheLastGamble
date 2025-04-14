@@ -1,15 +1,12 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Dependencies.NCalc;
-using UnityEngine;
 using Debug = System.Diagnostics.Debug;
 
 
 public class Poker : GunsGeneral
 {
-    public enum HandRank
+    private enum HandRank
     {
         Royal=1,
         StraightFlush,
@@ -23,32 +20,35 @@ public class Poker : GunsGeneral
         High=10
     }
     
-    CardData cardOne;
-    CardData cardTwo;
-    CardData cardThree;
-    CardData cardFour;
-    CardData cardFive;
+    CardData _cardOne;
+    CardData _cardTwo;
+    CardData _cardThree;
+    CardData _cardFour;
+    CardData _cardFive;
     // Start is called before the first frame update
-void makeHand()
+void MakeHand()
 {
-    cardOne = new CardData();
-    cardTwo = new CardData();
-    cardThree = new CardData();
-    cardFour = new CardData();
-    cardFive = new CardData();
+    _cardOne = new CardData();
+    _cardTwo = new CardData();
+    _cardThree = new CardData();
+    _cardFour = new CardData();
+    _cardFive = new CardData();
 }
     void Start()
     {
-        makeHand();  // Create random cards
-        HandRank hand = EvaluateHand(new List<CardData> { cardOne, cardTwo, cardThree, cardFour, cardFive });
+        MakeHand();  // Create random cards
+        HandRank hand = EvaluateHand(new List<CardData> { _cardOne, _cardTwo, _cardThree, _cardFour, _cardFive });
         
         ApplyEffect((int)hand);
         Debug.Fail("Hand Rank: " + hand);
     }
 
-   
-    
-    
+    public override void ApplyEffect()
+    {
+        throw new System.NotImplementedException();
+    }
+
+
     HandRank EvaluateHand(List<CardData> cards)
     {
         // Step 1: Sort the cards by face (rank)
@@ -116,9 +116,9 @@ void makeHand()
             return HandRank.High;  // High Card
         }
     }
-    
 
-public override object ApplyEffect(int handTotal)
+
+    private object ApplyEffect(int handTotal)
     {
         switch (handTotal)
         {
