@@ -47,7 +47,7 @@ void MakeHand()
     {
         throw new System.NotImplementedException();
     }
-
+ 
 
     HandRank EvaluateHand(List<CardData> cards)
     {
