@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static RussianGun;
 
 public class Roulette : GunsGeneral
 {
@@ -26,7 +27,7 @@ public class Roulette : GunsGeneral
     {
        
         Chamber = new Chamber();
-        if (==FateChosen();)
+        if (ammoInMag==FateChosen())
                 {
                     
                 }
