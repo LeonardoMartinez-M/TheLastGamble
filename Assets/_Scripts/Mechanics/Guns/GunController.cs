@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class GunController : MonoBehaviour
+public class GunController : ScriptableObject
 {
 
     [Header("Stats")]
@@ -52,8 +52,8 @@ public class GunController : MonoBehaviour
         // initialize the animator
         
         // cache the original position and rotation to reset to after recoiling/adsing
-        originalPosition = transform.localPosition;
-        originalRotation = transform.localRotation;
+       //originalPosition = transform.localPosition;
+        //originalRotation = transform.localRotation;
 
         aimPosition = data.aimPosition;
     }
@@ -118,23 +118,23 @@ public class GunController : MonoBehaviour
         // interpolate between the original position of the gun and the aim position
         // using the aim coroutine.
         _isAiming = true;
-        if(_aimRoutine != null) StopCoroutine(_aimRoutine);
-        _aimRoutine = StartCoroutine(AimDownSights());
+      //  if(_aimRoutine != null) StopCoroutine(_aimRoutine);
+      //  _aimRoutine = StartCoroutine(AimDownSights());
     }
 
     private void OnAimReleased(InputAction.CallbackContext obj)
     {
         // opposite of aim pressed.
         _isAiming = false;
-        if(_aimRoutine != null) StopCoroutine(_aimRoutine);
-        _aimRoutine = StartCoroutine(ReturnSightPosition());
+     //   if(_aimRoutine != null) StopCoroutine(_aimRoutine);
+     //   _aimRoutine = StartCoroutine(ReturnSightPosition());
     }
 
     private IEnumerator AimDownSights()
     {
         while (true)
         {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, aimPosition, Time.deltaTime * 8);
+      //      transform.localPosition = Vector3.Lerp(transform.localPosition, aimPosition, Time.deltaTime * 8);
             yield return null;
         }
     }
@@ -143,7 +143,7 @@ public class GunController : MonoBehaviour
     {
         while (true)
         {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, originalPosition, Time.deltaTime * 8);
+       //     transform.localPosition = Vector3.Lerp(transform.localPosition, originalPosition, Time.deltaTime * 8);
             yield return null;
         }
     }
