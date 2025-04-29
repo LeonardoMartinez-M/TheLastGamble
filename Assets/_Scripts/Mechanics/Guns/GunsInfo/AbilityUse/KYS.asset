@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40467137d220bd647aa6636320629a17, type: 3}
   m_Name: KYS
   m_EditorClassIdentifier: 
-  abilityScript: {fileID: 0}
+  abilityScript: {fileID: 11500000, guid: f1413f7c2abba5c42b513854980e92a9, type: 3}
   canUse: 0

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24a9a358f6ae57458b4631cf382ae80, type: 3}
   m_Name: Bakarat
   m_EditorClassIdentifier: 
-  ability: {fileID: 0}
-  Controller: {fileID: 0}
+  Controller: {fileID: 11500000, guid: d3c922558e716c94ca30dab7a1e57c02, type: 3}
+  prefab: {fileID: 0}
+  model: {fileID: 0}
   damage: 10
   fireRate: 850
   spareAmmo: 210

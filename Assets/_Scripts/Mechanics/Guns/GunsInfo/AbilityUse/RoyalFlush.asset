@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40467137d220bd647aa6636320629a17, type: 3}
   m_Name: RoyalFlush
   m_EditorClassIdentifier: 
-  abilityScript: {fileID: 0}
+  abilityScript: {fileID: 11500000, guid: 0888d09a1cd7ba14b8adb4c6b7c9c8ea, type: 3}
   canUse: 0

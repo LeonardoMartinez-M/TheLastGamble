@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 229545306}
   - component: {fileID: 229545305}
   - component: {fileID: 229545304}
+  - component: {fileID: 229545309}
+  - component: {fileID: 229545308}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -228,6 +230,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &229545308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229545303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a24c4f390a9b4478df6261cacca2e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityData: {fileID: 11400000, guid: 2ba0936fcdefacf4391ead2a516dce8d, type: 2}
+--- !u!114 &229545309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229545303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91471f0b4147b2348b62a41b959da9b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 11400000, guid: ccc7380ac61097f4b98ce517cb9f727f, type: 2}
 --- !u!1 &1271442777
 GameObject:
   m_ObjectHideFlags: 0

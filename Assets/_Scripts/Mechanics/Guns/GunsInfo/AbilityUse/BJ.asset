@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40467137d220bd647aa6636320629a17, type: 3}
   m_Name: BJ
   m_EditorClassIdentifier: 
-  abilityScript: {fileID: 0}
+  abilityScript: {fileID: 11500000, guid: f039602132acfd94f8eb5322b1ae3030, type: 3}
   canUse: 0

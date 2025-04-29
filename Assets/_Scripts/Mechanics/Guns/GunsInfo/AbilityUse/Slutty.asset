@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40467137d220bd647aa6636320629a17, type: 3}
   m_Name: Slutty
   m_EditorClassIdentifier: 
-  abilityScript: {fileID: 0}
+  abilityScript: {fileID: 11500000, guid: 1378718ecee06d149aa6d5049feb5d53, type: 3}
   canUse: 0
