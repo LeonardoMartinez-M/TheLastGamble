@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e24a9a358f6ae57458b4631cf382ae80, type: 3}
-  m_Name: Roullette
+  m_Name: Roulette
   m_EditorClassIdentifier: 
-  damage: 25
-  fireRate: 25
-  spareAmmo: 50
-  adsSpeed: 5
+  ability: {fileID: 0}
+  damage: 10
+  fireRate: 850
+  spareAmmo: 210
+  adsSpeed: 0
   aimPosition: {x: 0, y: 0, z: 0}
-  burstSize: 0
-  hipBloom: 5
-  yRecoil: 5
+  burstSize: -1
+  hipBloom: 0
+  yRecoil: 0
   xRecoil: 0
   zRecoil: 0
-  swayIntensity: 1
-  smoothing: 1
+  swayIntensity: 0
+  smoothing: 0

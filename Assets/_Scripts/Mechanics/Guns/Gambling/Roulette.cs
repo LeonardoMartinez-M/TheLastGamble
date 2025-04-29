@@ -2,10 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static RussianGun;
 using Random = System.Random;
 
-public class Roulette : GunsGeneral
+public class Roulette : MonoBehaviour, GunsGeneral
 {
     public enum Chamber
     {
@@ -29,7 +28,13 @@ public class Roulette : GunsGeneral
         FateChosen();
     }
 
-    public override void ApplyEffect()
+    public bool IsActive { get; set; }
+    public int Damage { get; set; }
+    public int ADSSway { get; set; }
+    public int Sway { get; set; }
+    public int Recoil { get; set; }
+
+    public void ApplyEffect()
     {
        Buffs.Damage(200);
     }

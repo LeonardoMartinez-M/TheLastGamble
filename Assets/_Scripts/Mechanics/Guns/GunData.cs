@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "Gun Info", menuName = "Stats/GunStats")]
 public class GunData : ScriptableObject
 {
-
+    [Header("Frame")]
+    public MonoScript Controller;
+    public UnityEngine.Object prefab;
+    public GameObject model;
     [Header("Combat Stats")]
     // damage
     public float damage = 10f;
@@ -38,5 +42,5 @@ public class GunData : ScriptableObject
     public float swayIntensity;
     // smoothing
     public float smoothing;
-
+    
 }

@@ -1,38 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
-public abstract class GunsGeneral : MonoBehaviour
+
+public partial interface GunsGeneral
 {
-    protected bool Active;
-    [SerializeField] protected int Damage;
-    [SerializeField] protected int ADSSway;
-    [SerializeField] protected int Sway;
-    [SerializeField] protected int Recoil;
-
-
-    private void Awake()
-    {
-        Active = false;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (Active == true)
-        {
-            return;
-        }
-        
-        }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public abstract void ApplyEffect();
+    bool IsActive { get; set; } // Property for the active state
+    int Damage { get; set; }
+    int ADSSway { get; set; }
+    int Sway { get; set; }
+    int Recoil { get; set; }
+   
 }

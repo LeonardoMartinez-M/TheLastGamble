@@ -14,7 +14,6 @@ public class GunController : MonoBehaviour
     [SerializeField] private Transform sight;
 
     [Header("Operational State")] 
-    [SerializeField] private GunsGeneral special;
     [SerializeField] private bool cobained;
     [SerializeField] private bool canFire;
     [SerializeField] private bool triggerDown;
