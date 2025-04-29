@@ -4,25 +4,20 @@ using Unity.VisualScripting;
 using UnityEngine;
 public class Buffs : MonoBehaviour
 {
-    public void Chance(int Possibility)
+    public static void Chance(int i)
     {
-        Debug.Log(Possibility);
-        return;
+        
+    }
+    
+    public static void Damage(double Damage)
+    {
+        
     }
 
-    public void Damage(int DamageAdjustment)
-    {
-        Debug.Log(DamageAdjustment);
-        return;
-    }
-
-    public void Burn(int Severity,int TimeLasted)
-    {
-        Debug.Log(Severity);
-        Debug.Log(TimeLasted);
-        return;
-    }
-
+    public static void Burn(int Severity, float TimeLasted)
+{
+    
+}
     public void RapidFire()
     {
         
@@ -52,7 +47,36 @@ public class Buffs : MonoBehaviour
     {
         
     }
-        // Start is called before the first frame update
+
+    public static void SelfDamage(int percentdamage)
+    {
+        
+    }
+    
+    public static void Stun(int duration)
+    {
+        return;
+    }
+
+    public static void Disempair(int severity, int Duration)
+    {
+        return;
+    }
+    public static void Blunderbuss(int type)
+    {
+        switch (type)
+        {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+        }
+    }
+    // Start is called before the first frame update
     void Start()
     {
         
@@ -63,4 +87,5 @@ public class Buffs : MonoBehaviour
     {
         
     }
+    
 }

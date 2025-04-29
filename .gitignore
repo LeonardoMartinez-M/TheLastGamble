@@ -93,3 +93,9 @@ Assets/Graphics/
 
 # Corresponding META files
 Assets/Graphics.meta
+
+# Custom ignored folders
+Assets/TestingStuff/
+
+# Corresponding META files
+Assets/TestingStuff.meta

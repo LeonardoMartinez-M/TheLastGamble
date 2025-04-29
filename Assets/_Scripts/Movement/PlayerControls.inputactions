@@ -2,7 +2,7 @@
     "name": "Controls",
     "maps": [
         {
-            "name": "Locomotion",
+            "name": "Player",
             "id": "d304ec40-8909-41c0-b6d8-c2ba7b2c7904",
             "actions": [
                 {
@@ -64,6 +64,24 @@
                     "type": "PassThrough",
                     "id": "3b8492e8-6260-48e5-b12f-20249cb0b61c",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ability",
+                    "type": "Button",
+                    "id": "465c219f-0ff0-4f10-9411-cbfa36198321",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "78a90f44-2211-4466-b701-e76a22fbd2f0",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -172,7 +190,7 @@
                 {
                     "name": "",
                     "id": "85395344-9c0c-4180-88b8-3230a9ceaef5",
-                    "path": "<Keyboard>/f",
+                    "path": "<Keyboard>/backquote",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -188,6 +206,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "027101af-c942-4e73-af0c-d2c39febdee6",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ability",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "284fb173-f649-490d-9611-b991caca0aea",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

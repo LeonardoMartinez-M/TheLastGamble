@@ -6,7 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Gun", menuName = "Stats/GunStats")]
 public class GunData : ScriptableObject
 {
-    public string gunName;
 
     [Header("Combat Stats")]
     // damage
@@ -14,7 +13,7 @@ public class GunData : ScriptableObject
     // fire rate
     public float fireRate = 850f;
     // mag size
-    public float magSize = 50f;
+    public static float magSize = 50f;
     // default spare ammo
     public float spareAmmo = 210;
     // ads speed
@@ -23,7 +22,7 @@ public class GunData : ScriptableObject
     public Vector3 aimPosition;
     // burst size
     public int burstSize = -1;
-
+ 
     [Header("Recoil Stats")]
     // bloom
     public float hipBloom;

@@ -15,6 +15,7 @@ public class GunController : MonoBehaviour
     [SerializeField] private Transform sight;
 
     [Header("Operational State")] 
+    [SerializeField] private bool cobained;
     [SerializeField] private bool canFire;
     [SerializeField] private bool triggerDown;
     [SerializeField] private bool reloading;
@@ -44,12 +45,8 @@ public class GunController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _input = InputManager.instance;
+       
 
-        _input.FireAction.performed += OnTriggerPulled;
-        _input.FireAction.canceled += OnTriggerReleased;
-        _input.AimAction.performed += OnAimPressed;
-        _input.AimAction.canceled += OnAimReleased;
         
         // initialize the audio source
         // initialize the animator
@@ -66,7 +63,7 @@ public class GunController : MonoBehaviour
     {
         // what should happen all the time?
         ResetRecoil();
-        HandleSway();
+      
     }
     
     #region Shooting
@@ -155,23 +152,7 @@ public class GunController : MonoBehaviour
     
     #region Sway
 
-    private void HandleSway()
-    {
-        float x = _input.Look.x;
-        float y = _input.Look.y;
-        
-        // compute adjustment rotations based on sway intensity
-        // and input amount. 
-        var xAdj = Quaternion.AngleAxis(-data.swayIntensity * x, Vector3.up);
-        var yAdj = Quaternion.AngleAxis(data.swayIntensity * y, Vector3.right);
-        var zAdj = Quaternion.AngleAxis(-data.swayIntensity * x, Vector3.forward);
-
-        // then create a true target rotation
-        var targetRotation = originalRotation * xAdj * yAdj * zAdj;
-
-        // then apply it using a Lerp.
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, Time.deltaTime * data.smoothing);
-    }
+   
     
     #endregion
 }
