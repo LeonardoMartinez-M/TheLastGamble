@@ -7,7 +7,12 @@ public class BlackJack : MonoBehaviour, GunsGeneral
     // declare two cards
     private CardData _cardA;
     private CardData _cardB;
-
+    private int handtTotal;
+    private void Start()
+    {
+        handtTotal = (int)_cardA._faceBj + (int)_cardB._faceBj;
+        ApplyEffect(handtTotal);
+    }
 
     //public void Update()
     //{

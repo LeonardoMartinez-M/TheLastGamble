@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 1447510317}
   - component: {fileID: 1447510316}
   - component: {fileID: 1447510315}
+  - component: {fileID: 1447510321}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -293,6 +294,7 @@ MonoBehaviour:
   mainCam: {fileID: 0}
   muzzle: {fileID: 0}
   sight: {fileID: 0}
+  cobained: 0
   canFire: 0
   triggerDown: 0
   reloading: 0
@@ -371,6 +373,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -91.189, z: 0}
+--- !u!114 &1447510321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447510314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006454d8d24886e4c9166b0f6e338dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats: {fileID: 11400000, guid: 9f7e1048e2d40704e94f9badfb6d6cfd, type: 2}
 --- !u!1 &2032654508
 GameObject:
   m_ObjectHideFlags: 0
