@@ -2,11 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static RussianGun;
+using Random = System.Random;
 
-public class Roulette : GunsGeneral
+public class Roulette : MonoBehaviour, GunsGeneral
 {
-    private enum Chamber
+    public enum Chamber
     {
         One = 1,
         Two,
@@ -25,16 +25,17 @@ public class Roulette : GunsGeneral
     // Start is called before the first frame update
     void Start()
     {
-       
-        Chamber = new Chamber();
-        if (ammoInMag==FateChosen())
-                {
-                    
-                }
+        FateChosen();
     }
-    
-    public override void ApplyEffect()
+
+    public bool IsActive { get; set; }
+    public int Damage { get; set; }
+    public int ADSSway { get; set; }
+    public int Sway { get; set; }
+    public int Recoil { get; set; }
+
+    public void ApplyEffect()
     {
-        throw new System.NotImplementedException();
+       Buffs.Damage(200);
     }
 }

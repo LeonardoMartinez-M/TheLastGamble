@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RouletteWheel : GunsGeneral
+public class RouletteWheel : MonoBehaviour, GunsGeneral
 {
     private enum Wheel
     {
@@ -59,7 +59,13 @@ public class RouletteWheel : GunsGeneral
         
     }
 
-    public override void ApplyEffect()
+    public bool IsActive { get; set; }
+    public int Damage { get; set; }
+    public int ADSSway { get; set; }
+    public int Sway { get; set; }
+    public int Recoil { get; set; }
+
+    public void ApplyEffect()
     {
         throw new System.NotImplementedException();
     }

@@ -1,10 +1,11 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using Debug = System.Diagnostics.Debug;
 
 
-public class Poker : GunsGeneral
+public class Poker : MonoBehaviour, GunsGeneral
 {
     private enum HandRank
     {
@@ -43,7 +44,13 @@ void MakeHand()
         Debug.Fail("Hand Rank: " + hand);
     }
 
-    public override void ApplyEffect()
+    public bool IsActive { get; set; }
+    public int Damage { get; set; }
+    public int ADSSway { get; set; }
+    public int Sway { get; set; }
+    public int Recoil { get; set; }
+
+    public void ApplyEffect()
     {
         throw new System.NotImplementedException();
     }

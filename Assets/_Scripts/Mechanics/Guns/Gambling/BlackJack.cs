@@ -1,6 +1,7 @@
 using System;
+using UnityEngine;
 
-public class BlackJack : GunsGeneral
+public class BlackJack : MonoBehaviour, GunsGeneral
 {
     // make a variable for input manager
     // declare two cards
@@ -72,7 +73,13 @@ public class BlackJack : GunsGeneral
          */
     }
 
-    public override void ApplyEffect()
+    public bool IsActive { get; set; }
+    public int Damage { get; set; }
+    public int ADSSway { get; set; }
+    public int Sway { get; set; }
+    public int Recoil { get; set; }
+
+    public void ApplyEffect()
     {
         throw new NotImplementedException();
     }
