@@ -14,13 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Controller: {fileID: 11500000, guid: d3c922558e716c94ca30dab7a1e57c02, type: 3}
   prefab: {fileID: 0}
-  model: {fileID: 0}
+  canStun: 0
+  canDing: 0
+  canImpair: 0
+  isExplosive: 0
+  canPen: 0
+  canBurn: 0
+  hasShrapnel: 0
+  chance: 0
   damage: 10
-  fireRate: 850
-  spareAmmo: 210
-  adsSpeed: 0
+  totalDamage: 460
+  fireRate: 300
+  magSize: 7
+  spareAmmo: 50
+  adsSpeed: 100
   aimPosition: {x: 0, y: 0, z: 0}
   burstSize: -1
+  stunDuration: 0
+  impairSeverity: 0
+  impairDuration: 0
   hipBloom: 0
   yRecoil: 0
   xRecoil: 0

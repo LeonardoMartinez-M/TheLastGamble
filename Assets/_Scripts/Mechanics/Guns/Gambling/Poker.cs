@@ -7,6 +7,7 @@ using Debug = System.Diagnostics.Debug;
 
 public class Poker : MonoBehaviour, GunsGeneral
 {
+    [SerializeField] private GunDisplay targetGunDisplay;
     private enum HandRank
     {
         Royal=1,
@@ -21,24 +22,24 @@ public class Poker : MonoBehaviour, GunsGeneral
         High=10
     }
     
-    CardData _cardOne;
-    CardData _cardTwo;
-    CardData _cardThree;
-    CardData _cardFour;
-    CardData _cardFive;
+    _CardData _cardOne;
+    _CardData _cardTwo;
+    _CardData _cardThree;
+    _CardData _cardFour;
+    _CardData _cardFive;
     // Start is called before the first frame update
 void MakeHand()
 {
-    _cardOne = new CardData();
-    _cardTwo = new CardData();
-    _cardThree = new CardData();
-    _cardFour = new CardData();
-    _cardFive = new CardData();
+    _cardOne = new _CardData();
+    _cardTwo = new _CardData();
+    _cardThree = new _CardData();
+    _cardFour = new _CardData();
+    _cardFive = new _CardData();
 }
     void Start()
     {
         MakeHand();  // Create random cards
-        HandRank hand = EvaluateHand(new List<CardData> { _cardOne, _cardTwo, _cardThree, _cardFour, _cardFive });
+        HandRank hand = EvaluateHand(new List<_CardData> { _cardOne, _cardTwo, _cardThree, _cardFour, _cardFive });
         
         ApplyEffect((int)hand);
         Debug.Fail("Hand Rank: " + hand);
@@ -56,7 +57,7 @@ void MakeHand()
     }
  
 
-    HandRank EvaluateHand(List<CardData> cards)
+    HandRank EvaluateHand(List<_CardData> cards)
     {
         // Step 1: Sort the cards by face (rank)
         var sortedCards = cards.OrderBy(card => (int)card.GetFace()).ToList();
@@ -84,7 +85,7 @@ void MakeHand()
         if (isFlush && isStraight)
         {
             // Check if it's a Royal Flush (Ace, King, Queen, Jack, Ten of the same suit)
-            if (sortedCards[0].GetFace() == CardData.Face.Ten && sortedCards[4].GetFace() == CardData.Face.Ace)
+            if (sortedCards[0].GetFace() == _CardData.Face.Ten && sortedCards[4].GetFace() == _CardData.Face.Ace)
             {
                 return HandRank.Royal;  // Royal Flush (highest possible hand)
             }
@@ -125,48 +126,46 @@ void MakeHand()
     }
 
 
-    private object ApplyEffect(int handTotal)
+    private void ApplyEffect(int handTotal)
     {
         switch (handTotal)
         {
             case 1:
-                Buffs.Blunderbuss(1);
-                Buffs.Disempair(5, 10);
+                Buffs.Blunderbuss(targetGunDisplay,1);
+                Buffs.Impair(targetGunDisplay,5, 10);
                 break;
             case 2:
-                Buffs.Blunderbuss(2);
+                Buffs.Blunderbuss(targetGunDisplay,2);
                 Buffs.SelfDamage(5);
                 break;
             case 3:
-                Buffs.Damage(Damage*4);
+                Buffs.Damage(targetGunDisplay,Damage*4);
                 Buffs.Burn(3,10f);
                 break;
             case 4:
-                Buffs.Chance(25);
-                Buffs.Blunderbuss(3);
-                Buffs.Stun(4);
+                Buffs.Chance(targetGunDisplay,25);
+                Buffs.Blunderbuss(targetGunDisplay,3);
+                Buffs.Stun(targetGunDisplay,4);
                 break;
             case 5:
-                Buffs.Blunderbuss(4);
+                Buffs.Blunderbuss(targetGunDisplay,4);
                 Buffs.Burn(2,10f);
                 break;
             case 6:
-                Buffs.Damage(Damage*3);
+                Buffs.Damage(targetGunDisplay,(long)Damage*3);
                 break;
             case 7:
-                Buffs.Damage(Damage*2.5);
+                Buffs.Damage(targetGunDisplay,(long)(Damage*2.5));
                 break;
             case 8:
-                Buffs.Damage(Damage*2);
+                Buffs.Damage(targetGunDisplay,(long)Damage*2);
                 break;
             case 9:
-                Buffs.Damage(Damage * 1.5);
+                Buffs.Damage(targetGunDisplay,(long)(Damage * 1.5));
                 break;
             case 10:
                 break;
         }
-
-        return handTotal;
     }
 }
 

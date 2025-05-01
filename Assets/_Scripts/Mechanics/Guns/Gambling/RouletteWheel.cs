@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using random = System.Random;
+using Random = Unity.Mathematics.Random;
 
 public class RouletteWheel : MonoBehaviour, GunsGeneral
 {
+    [SerializeField] private GunDisplay targetGunDisplay;
     private enum Wheel
     {
         One = 1,  
@@ -47,26 +50,39 @@ public class RouletteWheel : MonoBehaviour, GunsGeneral
 
         
     }
+
+    private Wheel _wheel;
+    
+    public RouletteWheel()
+    {
+        Random rand = new Random();
+        _wheel = (Wheel)rand.NextInt(1,39);
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        ApplyEffect((int)_wheel);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public bool IsActive { get; set; }
     public int Damage { get; set; }
     public int ADSSway { get; set; }
     public int Sway { get; set; }
     public int Recoil { get; set; }
-
     public void ApplyEffect()
     {
         throw new System.NotImplementedException();
+    }
+
+    public void ApplyEffect(int change)
+    {
+        long bonusDamage = 200+targetGunDisplay.gun.totalDamage;
+        int mag = (int)_wheel;
+        long damage = bonusDamage/mag;
+        targetGunDisplay.AdjustDamage(damage);
+        targetGunDisplay.AdjustMag(mag);
+
     }
 }

@@ -1,7 +1,7 @@
 using System;
 
 
-public class CardData
+public class _CardData
 {
     // Enums for Suit and Face
     public enum Suit
@@ -69,7 +69,7 @@ public class CardData
     public Suit _suit;
     public CardsBak _value;
     // Constructor to randomly generate a card
-    public CardData()
+    public _CardData()
     {
         Random rand = new Random();
 
