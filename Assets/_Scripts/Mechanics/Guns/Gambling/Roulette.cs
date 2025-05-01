@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
 public class Roulette : MonoBehaviour, GunsGeneral
 {
-    public enum Chamber
+    private enum Chamber
     {
         One = 1,
         Two,
@@ -16,18 +13,18 @@ public class Roulette : MonoBehaviour, GunsGeneral
         Six = 6
     }
 
-    private Chamber _bullet;
-    private void FateChosen()
+    [SerializeField] private GunDisplay gunDisplay; // Get a reference to the GunDisplay instance
+
+  
+
+    public Roulette()
     {
         Random rand = new Random();
-        _bullet = (Chamber)rand.Next(1,7);
+        _bullet = (Chamber)rand.Next(1, 7);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        FateChosen();
-    }
-
+    
+    private Chamber _bullet;
+  
     public bool IsActive { get; set; }
     public int Damage { get; set; }
     public int ADSSway { get; set; }
@@ -36,6 +33,14 @@ public class Roulette : MonoBehaviour, GunsGeneral
 
     public void ApplyEffect()
     {
-       Buffs.Damage(200);
+        if (gunDisplay != null)
+        {
+            // Access GetCurrentMag() through the instance
+            if ((int)_bullet == gunDisplay.GetCurrentMag())
+            {
+                // Access OneShot() through the instance
+                gunDisplay.OneShot();
+            }
+        }
     }
 }

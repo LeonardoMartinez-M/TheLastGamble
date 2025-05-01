@@ -20,7 +20,7 @@ public class GunController : MonoBehaviour
     [SerializeField] private bool reloading;
 
     [Header("Ammo Info")] 
-    [SerializeField] private int ammoInMag;
+    [SerializeField] public int ammoInMag;
     [SerializeField] private int reserveAmmo;
     [SerializeField] private float fireRate;
 
