@@ -14,6 +14,7 @@ public class GunController : MonoBehaviour
     [SerializeField] private Transform sight;
 
     [Header("Operational State")] 
+    [SerializeField] private bool abilityActivated;
     [SerializeField] private bool cobained;
     [SerializeField] private bool canFire;
     [SerializeField] private bool triggerDown;
@@ -38,7 +39,7 @@ public class GunController : MonoBehaviour
     [SerializeField] private GameObject bulletTrail;
     [SerializeField] private Animator anim;
     [SerializeField] private AudioSource audioSource;
-
+    [SerializeField] private AudioClip ding;
     private InputManager _input;
     
     // Start is called before the first frame update
@@ -66,6 +67,11 @@ public class GunController : MonoBehaviour
     }
     
     #region Shooting
+
+    private void onAbilityUsed(InputAction.CallbackContext obj)
+    {
+        Debug.Log("Ability Used");
+    }
 
     private void OnTriggerPulled(InputAction.CallbackContext obj)
     {
