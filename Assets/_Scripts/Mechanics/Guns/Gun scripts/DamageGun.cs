@@ -1,14 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageGun : MonoBehaviour
 {
+    public GunData GunInfo;
 
-    public float Damage;
-    public float BulletRange;
-    private Transform PlayerCamera;
+    public long damage
+    {
+        get
+        {
+            if (GunInfo != null)
+            {
+                return GunInfo.damage;
+            }
+            else
+            {
+                Debug.LogError("GunInfo is not assigned in the Inspector when accessing damage!");
+                return 0; // Or some default value
+            }
+        }
+    }
+
+    public float BulletRange
+    {
+        get
+        {
+            if (GunInfo != null)
+            {
+                return GunInfo.bulletFallof;
+            }
+            else
+            {
+                Debug.LogError("GunInfo is not assigned in the Inspector when accessing BulletRange!");
+                return 0f; // Or some default value
+            }
+        }
+    }
     
+    [SerializeField] private Transform PlayerCamera;
+   
     private void Start()
     {
         PlayerCamera = Camera.main.transform;
@@ -21,7 +50,7 @@ public class DamageGun : MonoBehaviour
         {
             if (hitInfo.collider.gameObject.TryGetComponent(out Entity enemy))
             {
-                enemy.Health -= Damage;
+                enemy.Health -= damage;
             }
         }
     }

@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 [CreateAssetMenu(fileName = "Gun Info", menuName = "Stats/GunStats")]
 public class GunData : ScriptableObject
-{
+{ 
     [Header("Frame")]
-    public MonoScript Controller;
+    private MonoScript controller;
     public UnityEngine.Object prefab;
 
     [Header("Ability Modifiers")]
@@ -38,6 +37,8 @@ public class GunData : ScriptableObject
     public Vector3 aimPosition;
     // burst size
     public int burstSize = -1;
+    //bullet Falloff
+    public float bulletFallof = 100f;
     //debuffs
     public int stunDuration = 0;
     public int impairSeverity = 0;

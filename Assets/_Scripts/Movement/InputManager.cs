@@ -67,7 +67,6 @@ public class InputManager : MonoBehaviour
     public bool PlayerSprinting()
     {
         return playerControls.Player.Sprint.triggered;
-        Debug.Log("running");
     }
     
 }

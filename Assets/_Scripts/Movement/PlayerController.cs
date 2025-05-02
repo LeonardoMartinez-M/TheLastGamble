@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float playerSpeed = 2.0f;
     [SerializeField]
+    private float sprintSpeedMultiplier = 2.5f; // Adjust this to control the sprint speed
+    [SerializeField]
     private float jumpHeight = 1.0f;
     [SerializeField]
     private bool groundedPlayer;
@@ -20,7 +22,8 @@ public class PlayerController : MonoBehaviour
     private float gravityValue = -9.81f;
     private InputManager inputManager;
     private Transform cameraTransform;
-
+    private bool isSprinting = false;
+    
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -31,9 +34,7 @@ public class PlayerController : MonoBehaviour
         inputManager.Sprinting.canceled += SprintingOff;
 
     }
-
     
-
     void Update()
     {
         groundedPlayer = controller.isGrounded;
@@ -49,6 +50,12 @@ public class PlayerController : MonoBehaviour
         move.y = 0f;
         controller.Move(move * Time.deltaTime * playerSpeed);
 
+        float currentSpeed = playerSpeed;
+        if (isSprinting)
+        {
+            currentSpeed *= sprintSpeedMultiplier;
+        }
+        
         if (move != Vector3.zero)
         {
             // Calculate the target rotation based on the movement direction
@@ -72,10 +79,12 @@ public class PlayerController : MonoBehaviour
 
     private void SprintingOn(InputAction.CallbackContext obj)
     {
-        if (SprintingOn() = true)
-        {
-            playerSpeed = 5.0f;
-        }
+        isSprinting = true;
+
+    }
+    private void SprintingOff(InputAction.CallbackContext obj)
+    {
+        isSprinting = false;
     }
     
 }
