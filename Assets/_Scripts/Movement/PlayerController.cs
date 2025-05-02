@@ -10,7 +10,11 @@ public class PlayerController : MonoBehaviour
     private float jumpHeight = 1.0f;
     [SerializeField]
     private bool groundedPlayer;
-        
+    [SerializeField]
+    private float rotationSpeed = 5f; // Adjust this value to control the rotation speed
+    [SerializeField]
+    private float gravityMultiplier = 1f; // Adjust this to control the strength of gravity
+
     private CharacterController controller;
     private Vector3 playerVelocity;
     private float gravityValue = -9.81f;
@@ -38,6 +42,7 @@ public class PlayerController : MonoBehaviour
             playerVelocity.y = 0f;
         }
 
+
         Vector2 movement = inputManager.GetPlayerMovement();
         Vector3 move = new Vector3(movement.x, 0f, movement.y);
         move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
@@ -46,16 +51,22 @@ public class PlayerController : MonoBehaviour
 
         if (move != Vector3.zero)
         {
-            gameObject.transform.forward = move;
+            // Calculate the target rotation based on the movement direction
+            Quaternion targetRotation = Quaternion.LookRotation(move);
+
+            // Smoothly rotate the player towards the target rotation
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
 
         // Makes the player jump
-        if (inputManager.PlayerJumpedThisFrame() && groundedPlayer)
+        if (inputManager.PlayerJumpedThisFrame())
         {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+            // Calculate the initial vertical velocity required to reach the desired jump height
+            playerVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue * gravityMultiplier);
         }
 
-        playerVelocity.y += gravityValue * Time.deltaTime;
+        // Apply gravity
+        playerVelocity.y += gravityValue * gravityMultiplier * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
 

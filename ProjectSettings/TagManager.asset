@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Common
+  - Elite
+  - MiniBoss
+  - Boss
+  - Npc
+  - Pickup
+  - Weapon
   layers:
   - Default
   - TransparentFX
