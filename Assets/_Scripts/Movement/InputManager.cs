@@ -7,6 +7,10 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     public static InputManager _instance;
+    
+    public InputAction Sprinting { get; private set; }
+    
+    public bool IsSprinting { get; private set; }
 
     public static InputManager Instance
     {
@@ -29,7 +33,10 @@ public class InputManager : MonoBehaviour
             _instance = this;
         }
         playerControls = new PlayerControls();
+        playerControls.Enable();
         Cursor.visible = false;
+
+        Sprinting = playerControls.Player.Sprint;
     }
 
     private void OnEnable()
@@ -55,6 +62,11 @@ public class InputManager : MonoBehaviour
     public bool PlayerJumpedThisFrame()
     {
         return playerControls.Player.Jump.triggered;
+    }
+
+    public bool PlayerSprinting()
+    {
+        return playerControls.Player.Sprint.triggered;
     }
     
 }

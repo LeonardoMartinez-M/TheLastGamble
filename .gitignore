@@ -95,7 +95,25 @@ Assets/Graphics/
 Assets/Graphics.meta
 
 # Custom ignored folders
-Assets/TestingStuff/
+Assets/OtherAssets/
 
 # Corresponding META files
-Assets/TestingStuff.meta
+Assets/OtherAssets.meta
+
+# Custom ignore folders
+Assets/Custom Prefabs/
+
+# Corresponding META files
+Assets/Custom Prefabs.meta
+
+# Custom ignore folders
+Assets/Materials/
+
+# Corresponding META files
+Assets/Materials.meta
+
+# Custom ignore folders
+Assets/Wall Textures/
+
+# Corresponding META files
+Assets/Wall Textures.meta
