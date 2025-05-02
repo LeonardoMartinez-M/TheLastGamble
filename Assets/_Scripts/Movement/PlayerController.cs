@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -26,13 +27,12 @@ public class PlayerController : MonoBehaviour
         inputManager = InputManager._instance;
         cameraTransform = Camera.main.transform;
 
-        // Initial ground check
-        groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y <= -1)
-        {
-            playerVelocity.y = 0f;
-        }
+        inputManager.Sprinting.performed += SprintingOn;
+        inputManager.Sprinting.canceled += SprintingOff;
+
     }
+
+    
 
     void Update()
     {
@@ -69,4 +69,13 @@ public class PlayerController : MonoBehaviour
         playerVelocity.y += gravityValue * gravityMultiplier * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
+
+    private void SprintingOn(InputAction.CallbackContext obj)
+    {
+        if (SprintingOn() = true)
+        {
+            playerSpeed = 5.0f;
+        }
+    }
+    
 }

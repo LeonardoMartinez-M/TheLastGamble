@@ -38,7 +38,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Sprint"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""c1391de4-71ef-4783-8872-d99aaaaee437"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
