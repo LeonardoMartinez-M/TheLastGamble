@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -21,7 +22,13 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         inputManager = InputManager._instance;
         cameraTransform = Camera.main.transform;
+
+        inputManager.Sprinting.performed += SprintingOn;
+        inputManager.Sprinting.canceled += SprintingOff;
+
     }
+
+    
 
     void Update()
     {
@@ -51,4 +58,13 @@ public class PlayerController : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
+
+    private void SprintingOn(InputAction.CallbackContext obj)
+    {
+        if (SprintingOn() = true)
+        {
+            playerSpeed = 5.0f;
+        }
+    }
+    
 }
