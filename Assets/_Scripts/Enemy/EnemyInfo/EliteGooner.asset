@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EliteGooner
   m_EditorClassIdentifier: 
   enemyClass: 0
-  enemyHealth: 0
+  enemyHealth: 1580
   movementSpeed: 100
   reactionSpeed: 50
   burned: 0
