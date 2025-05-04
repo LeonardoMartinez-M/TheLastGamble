@@ -1,8 +1,19 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AbilityDisplay : MonoBehaviour
 {
     public AbilityData abilityData;
+    
+    public void ActivateAbilityDisplay()
+    {
+       
+            Debug.Log("Ability Activated: "+abilityData.name);
+            abilityData.canUse = true;
+            abilityData.Shootout(gameObject);
+            
+    }
 
     private void FixedUpdate()
     {

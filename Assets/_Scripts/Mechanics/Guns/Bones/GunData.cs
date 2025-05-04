@@ -31,6 +31,8 @@ public class GunData : ScriptableObject
     public long totalDamage = 390;
     // fire rate
     public float fireRate = 850f;
+    // reload speed
+    public float reloadSpeed = 10f;
     // mag size
     public long magSize = 39;
    
