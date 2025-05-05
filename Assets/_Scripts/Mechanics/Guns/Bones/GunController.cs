@@ -57,8 +57,8 @@ namespace _Scripts.Mechanics.Guns.Bones
             //originalPosition = transform.localPosition;
             //originalRotation = transform.localRotation;
 
-            aimPosition = data.aimPosition;
-        }
+//        aimPosition = data.aimPosition;
+    }
 
         // Update is called once per frame
         void Update()
