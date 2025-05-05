@@ -1,7 +1,8 @@
 using System;
+using _Scripts.Mechanics.Guns.Bones;
 using UnityEngine;
 
-public class BlackJack : MonoBehaviour, GunsGeneral
+public class BlackJack : MonoBehaviour, IGunsGeneral
 {
     [SerializeField] private GunDisplay targetGunDisplay;
     // make a variable for input manager

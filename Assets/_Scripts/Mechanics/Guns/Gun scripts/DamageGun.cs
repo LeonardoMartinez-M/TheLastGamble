@@ -1,5 +1,5 @@
 using System;
-using Unity.VisualScripting;
+using _Scripts.Mechanics.Guns.Bones;
 using UnityEngine;
 
 public class DamageGun : MonoBehaviour
@@ -8,13 +8,14 @@ public class DamageGun : MonoBehaviour
     public long damageDone;
     private int currentMagazine;
     private int magazineSize;
+    private long barMax;
     public long damage
     {
         get
         {
             if (GunInfo != null)
             {
-                return GunInfo.damage;
+                return GunInfo.Damage;
             }
             else
             {
@@ -27,9 +28,9 @@ public class DamageGun : MonoBehaviour
 
     private void OnValidate()
     {
-        if(damageDone == 0|| damageDone >GunInfo.damage|| damageDone< GunInfo.damage)
+        if(damageDone == 0|| damageDone >GunInfo.Damage|| damageDone< GunInfo.Damage)
         {
-            damageDone = GunInfo.damage;
+            damageDone = GunInfo.Damage;
         }
     }
 
@@ -53,6 +54,7 @@ public class DamageGun : MonoBehaviour
    
     private void Start()
     {
+        barMax = GunInfo.abilityTrigger;
         magazineSize = (int)GunInfo.magSize;
         currentMagazine = (int)GunInfo.magSize;
         Debug.Log(gameObject.name + " has started.");
@@ -83,7 +85,8 @@ public class DamageGun : MonoBehaviour
         }
         else
         {
-            Debug.Log("gun has been fired. In Mag: " + currentMagazine);
+            GunInfo.abilityBar += 100;
+            Debug.Log("gun has been fired. In Mag: " + currentMagazine+". Ability Progress: "+GunInfo.abilityBar+" of "+barMax);
             currentMagazine--;
             Ray gunRay = new Ray(PlayerCamera.position, PlayerCamera.forward);
             if (Physics.Raycast(gunRay, out RaycastHit hitInfo, BulletRange))

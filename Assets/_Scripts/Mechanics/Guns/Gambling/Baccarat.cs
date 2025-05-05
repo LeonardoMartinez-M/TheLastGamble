@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using _Scripts.Mechanics.Guns.Bones;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
-public class Baccarat : MonoBehaviour, GunsGeneral
+public class Baccarat : MonoBehaviour, IGunsGeneral
 {
     [SerializeField] private GunDisplay targetGunDisplay;
     private _CardData _cardA;

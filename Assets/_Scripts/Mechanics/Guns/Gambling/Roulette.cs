@@ -1,7 +1,8 @@
+using _Scripts.Mechanics.Guns.Bones;
 using UnityEngine;
 using Random = System.Random;
 
-public class Roulette : MonoBehaviour, GunsGeneral
+public class Roulette : MonoBehaviour, IGunsGeneral
 {
     private enum Chamber
     {

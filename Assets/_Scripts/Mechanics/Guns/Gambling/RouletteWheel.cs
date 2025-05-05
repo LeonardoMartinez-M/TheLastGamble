@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using _Scripts.Mechanics.Guns.Bones;
 using UnityEngine;
 using random = System.Random;
 using Random = Unity.Mathematics.Random;
 
-public class RouletteWheel : MonoBehaviour, GunsGeneral
+public class RouletteWheel : MonoBehaviour, IGunsGeneral
 {
     [SerializeField] private GunDisplay targetGunDisplay;
     private enum Wheel

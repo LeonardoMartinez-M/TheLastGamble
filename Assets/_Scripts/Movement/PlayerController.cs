@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    private AbilityDisplay abilityDisplay;
     [SerializeField] private DamageGun _damageGun;
     [SerializeField]
     private float playerSpeed = 2.0f;
@@ -24,7 +23,9 @@ public class PlayerController : MonoBehaviour
     private float gravityValue = -9.81f;
     private InputManager inputManager;
     private Transform cameraTransform;
-    private bool isSprinting = false;
+    private bool isSprinting;
+    private bool isReloading;
+    
     private void Start()
     {
         //Hide the cursor
@@ -37,7 +38,6 @@ public class PlayerController : MonoBehaviour
         
         inputManager.Sprinting.performed += SprintingOn;
         inputManager.Sprinting.canceled += SprintingOff;
-
     }
     
     void Update()
@@ -65,7 +65,11 @@ public class PlayerController : MonoBehaviour
         {
             playerSpeed = 10f;
         }
-        
+
+        if (inputManager.PlayerReloading() == true)
+        {
+            _damageGun.Reload();
+        }
         if (move != Vector3.zero)
         {
             // Calculate the target rotation based on the movement direction
