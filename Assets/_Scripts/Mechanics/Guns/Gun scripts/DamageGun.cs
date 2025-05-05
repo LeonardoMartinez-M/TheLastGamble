@@ -71,7 +71,7 @@ public class DamageGun : MonoBehaviour
         else
         {
             Debug.Log(gameObject.name + " has reloaded.");
-            currentMagazine += magazineSize;
+            currentMagazine = magazineSize;
         }
 
        
