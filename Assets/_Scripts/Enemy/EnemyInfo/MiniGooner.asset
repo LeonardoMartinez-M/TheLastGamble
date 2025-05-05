@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MiniGooner
   m_EditorClassIdentifier: 
   enemyClass: 0
-  enemyHealth: 0
+  enemyHealth: 5600000000
   movementSpeed: 100
   reactionSpeed: 50
   burned: 0

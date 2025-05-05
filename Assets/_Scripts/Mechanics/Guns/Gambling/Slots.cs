@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using _Scripts.Mechanics.Guns.Bones;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour, GunsGeneral
+public class NewBehaviourScript : MonoBehaviour, IGunsGeneral
 {
     [SerializeField] private GunDisplay targetGunDisplay;
     private _SlotData slotOne;

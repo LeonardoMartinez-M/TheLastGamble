@@ -1,11 +1,12 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using _Scripts.Mechanics.Guns.Bones;
 using UnityEngine;
 using Debug = System.Diagnostics.Debug;
 
 
-public class Poker : MonoBehaviour, GunsGeneral
+public class Poker : MonoBehaviour, IGunsGeneral
 {
     [SerializeField] private GunDisplay targetGunDisplay;
     private enum HandRank
