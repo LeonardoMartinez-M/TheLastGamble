@@ -74,13 +74,11 @@ public class InputManager : MonoBehaviour
 
     public bool PlayerAbilityInUse()
     {
-        Debug.Log("F is pressed");
         return playerControls.Player.Ability.triggered;
     }
 
     public bool PlayerReloading()
     {
-        Debug.Log("R is pressed");
         return playerControls.Player.Reload.triggered;
     }
     

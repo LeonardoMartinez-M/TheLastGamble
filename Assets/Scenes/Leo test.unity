@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -887,7 +887,19 @@ MonoBehaviour:
         m_CallState: 2
   OnGunReload:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 794302704}
+        m_TargetAssemblyTypeName: DamageGun, Assembly-CSharp
+        m_MethodName: Reload
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnGunAbility:
     m_PersistentCalls:
       m_Calls: []
@@ -955,7 +967,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a24c4f390a9b4478df6261cacca2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityData: {fileID: 11400000, guid: 3915af7b9ae9f6e4285f429b3743afaf, type: 2}
 --- !u!1 &1071748444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1168,7 @@ Transform:
   m_GameObject: {fileID: 1325158617}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.07, y: 0, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

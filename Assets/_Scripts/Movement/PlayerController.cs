@@ -65,11 +65,6 @@ public class PlayerController : MonoBehaviour
         {
             playerSpeed = 10f;
         }
-
-        if (inputManager.PlayerReloading() == true)
-        {
-            _damageGun.Reload();
-        }
         if (move != Vector3.zero)
         {
             // Calculate the target rotation based on the movement direction
