@@ -61,6 +61,21 @@ public class DamageGun : MonoBehaviour
         PlayerCamera = Camera.main.transform;
     }
 
+
+    public void Ability(IGunsGeneral GunScript)
+    {
+        if (GunInfo.abilityBar>=barMax)
+        {
+            Debug.Log("Ability: "+GunInfo.AbilityScript+" activated");
+            GunInfo.abilityBar = 0;
+            
+        }
+        else
+        {
+            Debug.Log("Not enough Ability score");
+        }
+        
+    }
    
     public void Reload()
     {
@@ -85,7 +100,10 @@ public class DamageGun : MonoBehaviour
         }
         else
         {
-            GunInfo.abilityBar += 100;
+            if (GunInfo.abilityBar<barMax)
+            {
+                GunInfo.abilityBar += 100;
+            }
             Debug.Log("gun has been fired. In Mag: " + currentMagazine+". Ability Progress: "+GunInfo.abilityBar+" of "+barMax);
             currentMagazine--;
             Ray gunRay = new Ray(PlayerCamera.position, PlayerCamera.forward);

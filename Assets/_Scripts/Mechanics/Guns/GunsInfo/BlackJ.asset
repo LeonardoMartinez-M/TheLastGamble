@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24a9a358f6ae57458b4631cf382ae80, type: 3}
   m_Name: BlackJ
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 11500000, guid: f039602132acfd94f8eb5322b1ae3030, type: 3}
   canStun: 0
   canDing: 0
   canImpair: 0
@@ -21,9 +21,10 @@ MonoBehaviour:
   canBurn: 0
   hasShrapnel: 0
   chance: 0
-  _damage: 60
+  damage: 60
   totalDamage: 1200
   fireRate: 850
+  reloadSpeed: 10
   magSize: 20
   spareAmmo: 210
   adsSpeed: 0
@@ -33,6 +34,9 @@ MonoBehaviour:
   stunDuration: 0
   impairSeverity: 0
   impairDuration: 0
+  abilityBar: 0
+  abilityTrigger: 1000
+  canUse: 0
   hipBloom: 0
   yRecoil: 0
   xRecoil: 0

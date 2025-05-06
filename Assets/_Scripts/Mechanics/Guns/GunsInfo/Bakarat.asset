@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24a9a358f6ae57458b4631cf382ae80, type: 3}
   m_Name: Bakarat
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 11500000, guid: ec6f78c9e36dbb444be062693bc1d187, type: 3}
   canStun: 0
   canDing: 0
   canImpair: 0
@@ -21,9 +21,10 @@ MonoBehaviour:
   canBurn: 0
   hasShrapnel: 0
   chance: 0
-  _damage: 100
+  damage: 100
   totalDamage: 1000
   fireRate: 150
+  reloadSpeed: 10
   magSize: 10
   spareAmmo: 210
   adsSpeed: 0
@@ -33,6 +34,9 @@ MonoBehaviour:
   stunDuration: 0
   impairSeverity: 0
   impairDuration: 0
+  abilityBar: 0
+  abilityTrigger: 1000
+  canUse: 0
   hipBloom: 0
   yRecoil: 100
   xRecoil: 0

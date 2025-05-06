@@ -65,17 +65,18 @@ public class RouletteWheel : MonoBehaviour, IGunsGeneral
     {
         ApplyEffect((int)_wheel);
     }
-    
+
+
+    public void ApplyEffect()
+    {
+        throw new System.NotImplementedException();
+    }
 
     public bool IsActive { get; set; }
     public int Damage { get; set; }
     public int ADSSway { get; set; }
     public int Sway { get; set; }
     public int Recoil { get; set; }
-    public void ApplyEffect()
-    {
-        throw new System.NotImplementedException();
-    }
 
     public void ApplyEffect(int change)
     {

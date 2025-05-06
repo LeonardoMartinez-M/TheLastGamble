@@ -23,7 +23,7 @@ public class NewBehaviourScript : MonoBehaviour, IGunsGeneral
         
     }
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         ApplyEffect(EvaluateRollers(slotOne.GetSlot(), slotTwo.GetSlot(), slotThree.GetSlot()));
     }
@@ -71,7 +71,7 @@ public class NewBehaviourScript : MonoBehaviour, IGunsGeneral
         throw new System.NotImplementedException();
     }
 
-    public void ApplyEffect(int jackPotType)
+    public int ApplyEffect(int jackPotType)
     {
         switch (jackPotType)
         {
@@ -99,5 +99,7 @@ public class NewBehaviourScript : MonoBehaviour, IGunsGeneral
             case 8:
                 break;
         }
+
+        return 0;
     }
 }

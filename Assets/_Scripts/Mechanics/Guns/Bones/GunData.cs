@@ -15,7 +15,7 @@ namespace _Scripts.Mechanics.Guns.Bones
     {
         [Header("Frame")]
         private MonoScript _controller;
-        public Object prefab;
+        public Object abilityScript;
 
         [Header("Ability Modifiers")]
         public bool canStun;
@@ -80,27 +80,7 @@ namespace _Scripts.Mechanics.Guns.Bones
         public long abilityBar;
         public long abilityTrigger = 1000;
         public bool canUse;
-
-        public void Shootout(GameObject owner)
-        {
-            if (AbilityScript != null)
-            {
-                if (canUse && abilityBar >= abilityTrigger)
-                {
-                    // abilityScript is already a reference to the component implementing IGunsGeneral
-                    if (AbilityScript is MonoBehaviour)
-                    {
-                        // Cast abilityScript to IGunsGeneral to ensure ApplyEffect() is accessible
-                        if (AbilityScript is { } gunAbility)
-                        {
-                            gunAbility.ApplyEffect();
-                            abilityBar = 0;
-                            canUse = false;
-                        }
-                    }
-                }
-            }
-        }
+        
 
         [Header("Recoil Stats")]
         // bloom
