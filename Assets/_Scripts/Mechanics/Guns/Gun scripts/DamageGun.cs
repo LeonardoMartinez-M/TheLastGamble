@@ -61,7 +61,12 @@ public class DamageGun : MonoBehaviour
         PlayerCamera = Camera.main.transform;
     }
 
-   
+
+    public void Ability()
+    {
+        Debug.Log("Ability triggered.");
+    }
+    
     public void Reload()
     {
         if (currentMagazine>=magazineSize)
@@ -79,13 +84,21 @@ public class DamageGun : MonoBehaviour
     
     public void Shoot()
     {
+        if (GunInfo.abilityBar>=barMax)
+        {
+            Debug.Log("Ability Bar is Full");
+        }
+        else
+        {
+            GunInfo.abilityBar += 100;
+        }
         if (currentMagazine <=0)
         {
             Debug.Log(gameObject.name + " has stopped. No more ammo");
         }
         else
         {
-            GunInfo.abilityBar += 100;
+           
             Debug.Log("gun has been fired. In Mag: " + currentMagazine+". Ability Progress: "+GunInfo.abilityBar+" of "+barMax);
             currentMagazine--;
             Ray gunRay = new Ray(PlayerCamera.position, PlayerCamera.forward);
