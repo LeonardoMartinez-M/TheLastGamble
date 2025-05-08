@@ -10,6 +10,8 @@ public class NewBehaviourScript : MonoBehaviour, IGunsGeneral
     private _SlotData slotOne;
     private _SlotData slotTwo;
     private _SlotData slotThree;
+
+    private int _EffectRoll;
     public enum JackPot
     {
         Seven = 1,
@@ -25,7 +27,8 @@ public class NewBehaviourScript : MonoBehaviour, IGunsGeneral
     // Start is called before the first frame update
     private void Start()
     {
-        ApplyEffect(EvaluateRollers(slotOne.GetSlot(), slotTwo.GetSlot(), slotThree.GetSlot()));
+        _EffectRoll= EvaluateRollers(slotOne.GetSlot(), slotTwo.GetSlot(), slotThree.GetSlot());
+        ApplyEffect();
     }
 
     private int EvaluateRollers(int slotOnes, int slotTwos, int slotThrees)
@@ -66,13 +69,10 @@ public class NewBehaviourScript : MonoBehaviour, IGunsGeneral
     public int ADSSway { get; set; }
     public int Sway { get; set; }
     public int Recoil { get; set; }
+
     public void ApplyEffect()
     {
-        throw new System.NotImplementedException();
-    }
-
-    public int ApplyEffect(int jackPotType)
-    {
+        int jackPotType = _EffectRoll;
         switch (jackPotType)
         {
             case 1:
@@ -99,7 +99,6 @@ public class NewBehaviourScript : MonoBehaviour, IGunsGeneral
             case 8:
                 break;
         }
-
-        return 0;
+        
     }
 }

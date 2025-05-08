@@ -62,13 +62,13 @@ public class DamageGun : MonoBehaviour
     }
 
 
-    public void Ability(IGunsGeneral GunScript)
+    public void Ability()
     {
         if (GunInfo.abilityBar>=barMax)
         {
             Debug.Log("Ability: "+GunInfo.AbilityScript+" activated");
             GunInfo.abilityBar = 0;
-            
+            GunInfo.
         }
         else
         {

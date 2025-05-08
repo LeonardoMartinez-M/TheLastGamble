@@ -7,6 +7,7 @@ using Random = Unity.Mathematics.Random;
 
 public class RouletteWheel : MonoBehaviour, IGunsGeneral
 {
+    private int _EffectRoll;
     [SerializeField] private GunDisplay targetGunDisplay;
     private enum Wheel
     {
@@ -63,28 +64,38 @@ public class RouletteWheel : MonoBehaviour, IGunsGeneral
     // Start is called before the first frame update
     void Start()
     {
-        ApplyEffect((int)_wheel);
+        ApplyEffect();
     }
 
-
-    public void ApplyEffect()
-    {
-        throw new System.NotImplementedException();
-    }
-
+    
     public bool IsActive { get; set; }
     public int Damage { get; set; }
     public int ADSSway { get; set; }
     public int Sway { get; set; }
     public int Recoil { get; set; }
 
-    public void ApplyEffect(int change)
+    public void ApplyEffect()
     {
-        long bonusDamage = 200+targetGunDisplay.gun.totalDamage;
-        int mag = (int)_wheel;
-        long damage = bonusDamage/mag;
-        targetGunDisplay.AdjustDamage(damage);
-        targetGunDisplay.AdjustMag(mag);
+            Debug.Log("ApplyEffect has been called");
 
+            if (targetGunDisplay == null)
+            {
+                Debug.LogError("targetGunDisplay is null! Cannot proceed with ApplyEffect.");
+                return;
+            }
+            Debug.Log($"Current targetGunDisplay.gun.totalDamage: {targetGunDisplay.gun.totalDamage}");
+            long bonusDamage = 200 + targetGunDisplay.gun.totalDamage;
+            Debug.Log($"Calculated bonusDamage: {bonusDamage}");
+
+            Debug.Log($"Current _wheel value: {_wheel}");
+            int mag = (int)_wheel;
+            Debug.Log($"Casted mag value: {mag}");
+
+                long damage = bonusDamage / mag;
+                Debug.Log($"Calculated damage: {damage}");
+                targetGunDisplay.AdjustDamage(damage);
+                Debug.Log($"Called targetGunDisplay.AdjustDamage({damage})");
+                targetGunDisplay.AdjustMag(mag);
+            Debug.Log($"Called targetGunDisplay.AdjustMag({mag})");
+        }
     }
-}
