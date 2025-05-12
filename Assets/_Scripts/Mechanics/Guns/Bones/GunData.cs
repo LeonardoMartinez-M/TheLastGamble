@@ -75,7 +75,6 @@ namespace _Scripts.Mechanics.Guns.Bones
         }
 
         [Header("Ability Data")]
-        public IGunsGeneral AbilityScript;
 
         public long abilityBar;
         public long abilityTrigger = 1000;

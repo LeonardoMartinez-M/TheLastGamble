@@ -8,8 +8,9 @@ using Debug = System.Diagnostics.Debug;
 
 public class Poker : MonoBehaviour, IGunsGeneral
 {
+    private int _EffectRoll;
     [SerializeField] private GunDisplay targetGunDisplay;
-    private enum HandRank
+    public enum HandRank
     {
         Royal=1,
         StraightFlush,
@@ -37,26 +38,12 @@ void MakeHand()
     _cardFour = new _CardData();
     _cardFive = new _CardData();
 }
-    void Start()
-    {
-        MakeHand();  // Create random cards
-        HandRank hand = EvaluateHand(new List<_CardData> { _cardOne, _cardTwo, _cardThree, _cardFour, _cardFive });
-        
-        ApplyEffect((int)hand);
-        Debug.Fail("Hand Rank: " + hand);
-    }
 
-    public bool IsActive { get; set; }
+public bool IsActive { get; set; }
     public int Damage { get; set; }
     public int ADSSway { get; set; }
     public int Sway { get; set; }
     public int Recoil { get; set; }
-
-    public void ApplyEffect()
-    {
-        throw new System.NotImplementedException();
-    }
- 
 
     HandRank EvaluateHand(List<_CardData> cards)
     {
@@ -127,8 +114,11 @@ void MakeHand()
     }
 
 
-    private void ApplyEffect(int handTotal)
+    public void ApplyEffect()
     {
+        MakeHand();  // Create random cards
+        _EffectRoll = (int)EvaluateHand(new List<_CardData> { _cardOne, _cardTwo, _cardThree, _cardFour, _cardFive });
+        int handTotal = _EffectRoll;
         switch (handTotal)
         {
             case 1:

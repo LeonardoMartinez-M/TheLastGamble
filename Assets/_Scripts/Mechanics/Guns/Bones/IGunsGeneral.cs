@@ -1,3 +1,6 @@
+using System;
+using UnityEngine.Accessibility;
+
 namespace _Scripts.Mechanics.Guns.Bones
 {
     public partial interface IGunsGeneral

@@ -13,6 +13,11 @@ namespace _Scripts.Mechanics.Guns.Bones
             return 0;
         }
 
+        public void ApplyAbility()
+        {
+            gun.
+        }
+        
         public int AdjustChance(int chance)
         {
             gun.chance += chance;
