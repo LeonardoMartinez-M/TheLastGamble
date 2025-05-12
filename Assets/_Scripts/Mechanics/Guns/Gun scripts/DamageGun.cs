@@ -94,14 +94,6 @@ public class DamageGun : MonoBehaviour
     
     public void Shoot()
     {
-        if (GunInfo.abilityBar>=barMax)
-        {
-            Debug.Log("Ability Bar is Full");
-        }
-        else
-        {
-            GunInfo.abilityBar += 100;
-        }
         if (currentMagazine <=0)
         {
             Debug.Log(gameObject.name + " has stopped. No more ammo");
