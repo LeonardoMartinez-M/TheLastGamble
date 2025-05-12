@@ -15,7 +15,7 @@ namespace _Scripts.Mechanics.Guns.Bones
 
         public void ApplyAbility()
         {
-            gun.
+            Debug.Log("Applying ability");
         }
         
         public int AdjustChance(int chance)
