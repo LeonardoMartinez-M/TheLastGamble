@@ -11,11 +11,11 @@ namespace _Scripts.Mechanics.Guns.Bones
     }
 
     [CreateAssetMenu(fileName = "Gun Info", menuName = "Stats/GunStats")]
-    public class GunData : ScriptableObject
+    public partial class GunData : ScriptableObject
     {
         [Header("Frame")]
         private MonoScript _controller;
-        public Object abilityScript;
+        public IGunsGeneral abilityScript;
 
         [Header("Ability Modifiers")]
         public bool canStun;
@@ -64,6 +64,11 @@ namespace _Scripts.Mechanics.Guns.Bones
             UpdateDamage(); // Calculate initial damage
         }
 
+        public void ActivateAbility()
+        {
+            abilityScript.ApplyEffect();
+        }
+        
         private void OnValidate()
         {
             UpdateDamage(); // Recalculate damage in the editor when values change

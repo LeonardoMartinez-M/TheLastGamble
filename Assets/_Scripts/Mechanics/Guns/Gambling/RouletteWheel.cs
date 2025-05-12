@@ -62,12 +62,7 @@ public class RouletteWheel : MonoBehaviour, IGunsGeneral
     }
     
     // Start is called before the first frame update
-    void Start()
-    {
-        ApplyEffect();
-    }
 
-    
     public bool IsActive { get; set; }
     public int Damage { get; set; }
     public int ADSSway { get; set; }
