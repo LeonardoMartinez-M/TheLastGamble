@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     private InputManager inputManager;
     private Transform cameraTransform;
     private bool isSprinting;
-    private bool isReloading;
     
     private void Start()
     {
@@ -65,6 +64,7 @@ public class PlayerController : MonoBehaviour
         {
             playerSpeed = 10f;
         }
+        
         if (move != Vector3.zero)
         {
             // Calculate the target rotation based on the movement direction

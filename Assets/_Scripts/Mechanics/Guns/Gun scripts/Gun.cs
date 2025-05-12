@@ -22,14 +22,14 @@ public class Gun : MonoBehaviour
     void Update()
     {
         // Handle Reload (R key)
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown("Reload"))
         {
             OnGunReload?.Invoke();
             // You might want to add a reload cooldown or other reload logic here
         }
 
         // Handle Special Action (F key)
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown("Ability"))
         {
             OnGunAbility?.Invoke();
             // Define what the 'F' key does in other scripts listening to OnSpecialAction

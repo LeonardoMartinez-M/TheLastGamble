@@ -66,9 +66,9 @@ public class DamageGun : MonoBehaviour
     {
         if (GunInfo.abilityBar>=barMax)
         {
-            Debug.Log("Ability: "+GunInfo.AbilityScript+" activated");
+            Debug.Log("Ability: "+GunInfo.name+" activated");
             GunInfo.abilityBar = 0;
-            GunInfo.
+            Debug.Log("Ability is attempting to change the gun data");
         }
         else
         {
