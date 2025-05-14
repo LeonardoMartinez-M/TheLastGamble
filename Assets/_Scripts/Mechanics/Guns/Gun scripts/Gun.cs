@@ -1,10 +1,12 @@
 using System;
+using _Scripts.Mechanics.Guns.Bones;
 using UnityEngine.Events;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Gun : MonoBehaviour
 {
+    public GunDisplay guns;
     public UnityEvent OnGunShoot;
     public UnityEvent OnGunReload; // New event for reload
     public UnityEvent OnGunAbility; // New event for 'F' key
@@ -20,6 +22,7 @@ public class Gun : MonoBehaviour
 
     private void OnValidate()
     {
+        FireCooldown = (float)guns.gun.fireRate;
         if (CurrentCooldown!=FireCooldown)
         {
             CurrentCooldown = FireCooldown;
