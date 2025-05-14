@@ -6,7 +6,7 @@ public class GunDisplay : MonoBehaviour
 {
     public GunData gun;
     public IGunsGeneral iGunsgeneral;
-    private GunController gunController; // Renamed to clarify its purpose
+    public GunController gunController; // Renamed to clarify its purpose
 
         public long OneShot()
         {

@@ -1,6 +1,7 @@
 using System;
 using UnityEngine.Events;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Gun : MonoBehaviour
 {
@@ -8,33 +9,44 @@ public class Gun : MonoBehaviour
     public UnityEvent OnGunReload; // New event for reload
     public UnityEvent OnGunAbility; // New event for 'F' key
 
-    public float FireCooldown;
+    private float FireCooldown;
 
     public bool Automatic;
 
-    private float CurrentCooldown;
+    public float CurrentCooldown;
+
+    private InputManager input;
+
+
+    private void OnValidate()
+    {
+        if (CurrentCooldown!=FireCooldown)
+        {
+            CurrentCooldown = FireCooldown;
+        }
+    }
 
     void Start()
     {
         CurrentCooldown = FireCooldown;
+        input = InputManager._instance;
+        
+        input.Reloading.performed += ReloadingOnperformed;
+        input.Ability.performed += AbilityOnperformed;
+    }
+
+    private void AbilityOnperformed(InputAction.CallbackContext obj)
+    { 
+        OnGunAbility?.Invoke();
+    }
+
+    private void ReloadingOnperformed(InputAction.CallbackContext obj)
+    {
+       OnGunReload?.Invoke();
     }
 
     void Update()
     {
-        // Handle Reload (R key)
-        if (Input.GetKeyDown("Reload"))
-        {
-            OnGunReload?.Invoke();
-            // You might want to add a reload cooldown or other reload logic here
-        }
-
-        // Handle Special Action (F key)
-        if (Input.GetKeyDown("Ability"))
-        {
-            OnGunAbility?.Invoke();
-            // Define what the 'F' key does in other scripts listening to OnSpecialAction
-        }
-
         // Handle Shooting (Left Mouse Button)
         if (Automatic)
         {
