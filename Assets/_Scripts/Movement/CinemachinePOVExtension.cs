@@ -24,13 +24,17 @@ public class CinemachinePOVExtension : CinemachineExtension
         {
             if (stage == CinemachineCore.Stage.Aim)
             {
-                if (startingRotation == null) startingRotation = transform.localRotation.eulerAngles;
+                // Check if startingRotation has its default value (0, 0, 0)
+                if (startingRotation == Vector3.zero)
+                {
+                    startingRotation = vcam.transform.localRotation.eulerAngles;
+                }
+
                 Vector2 deltaInput = _inputManager.GetMouseDelta();
                 startingRotation.x += deltaInput.x * verticalSpeed * Time.deltaTime;
                 startingRotation.y += deltaInput.y * horizontalSpeed * Time.deltaTime;
                 startingRotation.y = Mathf.Clamp(startingRotation.y, -clampAngle, clampAngle);
                 state.RawOrientation = Quaternion.Euler(-startingRotation.y, startingRotation.x, 0f);
-                
             }
         }
     }

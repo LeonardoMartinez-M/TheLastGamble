@@ -5,12 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Common
-  - Elite
-  - MiniBoss
-  - Boss
   - Npc
   - Pickup
   - Weapon
+  - gooner
+  - elite gooner
+  - miniboss
+  - Boss
   layers:
   - Default
   - TransparentFX

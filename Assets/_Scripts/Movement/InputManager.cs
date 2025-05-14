@@ -9,7 +9,8 @@ public class InputManager : MonoBehaviour
     public static InputManager _instance;
     
     public InputAction Sprinting { get; private set; }
-    
+    public InputAction Ability{get; private set;}
+    public InputAction Reloading { get; private set; }
     public bool IsSprinting { get; private set; }
 
     public static InputManager Instance
@@ -37,6 +38,8 @@ public class InputManager : MonoBehaviour
         Cursor.visible = false;
 
         Sprinting = playerControls.Player.Sprint;
+        Ability = playerControls.Player.Ability;
+        Reloading = playerControls.Player.Reload;
     }
 
     private void OnEnable()
@@ -67,7 +70,16 @@ public class InputManager : MonoBehaviour
     public bool PlayerSprinting()
     {
         return playerControls.Player.Sprint.triggered;
-        Debug.Log("running");
+    }
+
+    public bool PlayerAbilityInUse()
+    {
+        return playerControls.Player.Ability.triggered;
+    }
+
+    public bool PlayerReloading()
+    {
+        return playerControls.Player.Reload.triggered;
     }
     
 }

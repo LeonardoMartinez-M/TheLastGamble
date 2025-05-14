@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using _Scripts.Mechanics.Guns.Bones;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
-public class Baccarat : MonoBehaviour, GunsGeneral
+public class Baccarat : MonoBehaviour, IGunsGeneral
 {
     [SerializeField] private GunDisplay targetGunDisplay;
     private _CardData _cardA;
@@ -11,11 +12,6 @@ public class Baccarat : MonoBehaviour, GunsGeneral
     private int _handTotal;
     
     // Start is called before the first frame update
-    void Start()
-    {
-        EvaluateHand();
-        ApplyEffect(_handTotal);
-    }
 
     private void EvaluateHand()
     {
@@ -62,13 +58,11 @@ public class Baccarat : MonoBehaviour, GunsGeneral
     public int ADSSway { get; set; }
     public int Sway { get; set; }
     public int Recoil { get; set; }
+
     public void ApplyEffect()
     {
-        throw new System.NotImplementedException();
-    }
-
-    private void ApplyEffect(int handTotaled)
-    {
+        EvaluateHand();
+        int handTotaled = _handTotal;
         switch (handTotaled)
         {
             case 1:

@@ -4,8 +4,11 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private DamageGun _damageGun;
     [SerializeField]
     private float playerSpeed = 2.0f;
+    [SerializeField]
+    private float sprintSpeedMultiplier = 2.5f; // Adjust this to control the sprint speed
     [SerializeField]
     private float jumpHeight = 1.0f;
     [SerializeField]
@@ -20,35 +23,48 @@ public class PlayerController : MonoBehaviour
     private float gravityValue = -9.81f;
     private InputManager inputManager;
     private Transform cameraTransform;
-
+    private bool isSprinting;
+    
     private void Start()
     {
+        //Hide the cursor
+        Cursor.visible = false;
+        //Lock the cursor (optional, but recommended for first-person games)
+        Cursor.lockState = CursorLockMode.Locked;
         controller = GetComponent<CharacterController>();
         inputManager = InputManager._instance;
         cameraTransform = Camera.main.transform;
-
+        
         inputManager.Sprinting.performed += SprintingOn;
         inputManager.Sprinting.canceled += SprintingOff;
-
     }
-
     
-
     void Update()
     {
+        
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
         }
 
-
+       
+        
         Vector2 movement = inputManager.GetPlayerMovement();
         Vector3 move = new Vector3(movement.x, 0f, movement.y);
         move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
         move.y = 0f;
         controller.Move(move * Time.deltaTime * playerSpeed);
-
+        
+        if (isSprinting)
+        {
+            playerSpeed *= sprintSpeedMultiplier;
+        }
+        else
+        {
+            playerSpeed = 10f;
+        }
+        
         if (move != Vector3.zero)
         {
             // Calculate the target rotation based on the movement direction
@@ -69,13 +85,15 @@ public class PlayerController : MonoBehaviour
         playerVelocity.y += gravityValue * gravityMultiplier * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
-
+    
     private void SprintingOn(InputAction.CallbackContext obj)
     {
-        if (SprintingOn() = true)
-        {
-            playerSpeed = 5.0f;
-        }
+        isSprinting = true;
+
+    }
+    private void SprintingOff(InputAction.CallbackContext obj)
+    {
+        isSprinting = false;
     }
     
 }

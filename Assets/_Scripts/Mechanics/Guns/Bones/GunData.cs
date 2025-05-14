@@ -1,70 +1,142 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-
-[CreateAssetMenu(fileName = "Gun Info", menuName = "Stats/GunStats")]
-public class GunData : ScriptableObject
+namespace _Scripts.Mechanics.Guns.Bones
 {
-    [Header("Frame")]
-    public MonoScript Controller;
-    public UnityEngine.Object prefab;
+    // Define an interface for your gun abilities (moved to the top level)
+    public partial interface IGunsGeneral
+    {
+        void ApplyEffect();
+    }
 
-    [Header("Ability Modifiers")]
-    public bool canStun = false;
-    public bool canDing = false;
-    public bool canImpair = false;
-    public bool isExplosive = false;
-    public bool canPen = false;
-    public bool canBurn = false;
-    public bool hasShrapnel = false;
-    
-    [Header("Combat Stats")]
-    //chance of an effect happening
-    public int chance = 0;
-    // damage
-    public long damage;
-    public long totalDamage = 390;
-    // fire rate
-    public float fireRate = 850f;
-    // mag size
-    public long magSize = 39;
-    // default spare ammo
-    public float spareAmmo = 210;
-    // ads speed
-    public float adsSpeed;
-    // ads position
-    public Vector3 aimPosition;
-    // burst size
-    public int burstSize = -1;
-    //debuffs
-    public int stunDuration = 0;
-    public int impairSeverity = 0;
-    public int impairDuration = 0;
-    public GunData()
+    [CreateAssetMenu(fileName = "Gun Info", menuName = "Stats/GunStats")]
+    public class GunData : ScriptableObject
+    {
+        [Header("Frame")]
+        private MonoScript _controller;
+        public IGunsGeneral AbilityScript;
+
+        [Header("Ability Modifiers")]
+        public bool canStun;
+        public bool canDing;
+        public bool canImpair;
+        public bool isExplosive;
+        public bool canPen;
+        public bool canBurn;
+        public bool hasShrapnel;
+
+        [Header("Combat Stats")]
+        
+        public long barMax;
+        public int chance;
+        // damage
+        [FormerlySerializedAs("_damage")] [SerializeField] private long damage;
+        
+        public long Damage
         {
-            // Initialize magSize here, or it might be assigned elsewhere
-            magSize = 39; // Example value
-            // Calculate adjusted and assign to damage in the constructor
-            long adjusted = totalDamage / magSize;
-            damage = adjusted;
+            get => damage;
+            set => damage = value;
         }
-    
-    [Header("Recoil Stats")]
-    // bloom
-    public float hipBloom;
-    // y axis recoil
-    public float yRecoil;
-    // x axis recoil
-    public float xRecoil;
-    // z axis recoil
-    public float zRecoil;
+        public long totalDamage = 390;
+        // fire rate
+        public float fireRate = 850f;
+        // reload speed
+        public float reloadSpeed = 10f;
+        // mag size
+        public long magSize = 39;
 
-    [Header("Feel")]
-    // sway intensity
-    public float swayIntensity;
-    // smoothing
-    public float smoothing;
+        // default spare ammo
+        public float spareAmmo = 210;
+        // ads speed
+        public float adsSpeed;
+        // ads position
+        public Vector3 aimPosition;
+        // burst size
+        public int burstSize = -1;
+        //bullet Falloff
+        public float bulletFallof = 100f;
+        //debuffs
+        public int stunDuration;
+        public int impairSeverity;
+        public int impairDuration;
+
+        public GunData()
+        {
+            UpdateDamage(); // Calculate initial damage
+        }
+
+        public void ActivateAbility()
+        {
+            AbilityScript.ApplyEffect();
+        }
+        
+        private void OnValidate()
+        {
+            UpdateDamage(); // Recalculate damage in the editor when values change
+        }
+        
+        private void UpdateDamage()
+        {
+            Damage = (long)(totalDamage / Mathf.Max(1, magSize));
+        }
+
+        [Header("Ability Data")]
+
+        public long abilityBar;
+        public long abilityTrigger = 1000;
+        public bool canUse;
+        
+
+        [Header("Recoil Stats")]
+        // bloom
+        public float hipBloom;
+        // y axis recoil
+        public float yRecoil;
+        // x axis recoil
+        public float xRecoil;
+        // z axis recoil
+        public float zRecoil;
+
+        [Header("Feel")]
+        // sway intensity
+        public float swayIntensity;
+        // smoothing
+        public float smoothing;
+    }
+
+// Example of an ability script that implements the interface
+    public class StunAbility : MonoBehaviour, IGunsGeneral
+    {
+        public float stunDuration = 2f;
+
+        public void ApplyEffect()
+        {
+            // Implement your stun logic here
+        }
+
+        public bool IsActive { get; set; }
+        public int Damage { get; set; }
+        public int ADSSway { get; set; }
+        public int Sway { get; set; }
+        public int Recoil { get; set; }
+    }
     
+    // Another example
+    public class DamageBoostAbility : MonoBehaviour, IGunsGeneral
+    {
+        public float damageMultiplier = 1.5f;
+
+        public void ApplyEffect()
+        {
+            // Implement your damage boost logic here
+        }
+
+        public bool IsActive { get; set; }
+        public int Damage { get; set; }
+        public int ADSSway { get; set; }
+        public int AdsSway { get; set; }
+        public int Sway { get; set; }
+        public int Recoil { get; set; }
+    }
 }

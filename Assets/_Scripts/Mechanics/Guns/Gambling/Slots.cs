@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using _Scripts.Mechanics.Guns.Bones;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour, GunsGeneral
+public class NewBehaviourScript : MonoBehaviour, IGunsGeneral
 {
     [SerializeField] private GunDisplay targetGunDisplay;
     private _SlotData slotOne;
     private _SlotData slotTwo;
     private _SlotData slotThree;
+
+    private int _EffectRoll;
     public enum JackPot
     {
         Seven = 1,
@@ -22,9 +25,10 @@ public class NewBehaviourScript : MonoBehaviour, GunsGeneral
         
     }
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        ApplyEffect(EvaluateRollers(slotOne.GetSlot(), slotTwo.GetSlot(), slotThree.GetSlot()));
+        _EffectRoll= EvaluateRollers(slotOne.GetSlot(), slotTwo.GetSlot(), slotThree.GetSlot());
+        ApplyEffect();
     }
 
     private int EvaluateRollers(int slotOnes, int slotTwos, int slotThrees)
@@ -65,13 +69,10 @@ public class NewBehaviourScript : MonoBehaviour, GunsGeneral
     public int ADSSway { get; set; }
     public int Sway { get; set; }
     public int Recoil { get; set; }
+
     public void ApplyEffect()
     {
-        throw new System.NotImplementedException();
-    }
-
-    public void ApplyEffect(int jackPotType)
-    {
+        int jackPotType = _EffectRoll;
         switch (jackPotType)
         {
             case 1:
@@ -98,5 +99,6 @@ public class NewBehaviourScript : MonoBehaviour, GunsGeneral
             case 8:
                 break;
         }
+        
     }
 }

@@ -65,7 +65,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Reload"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""971c8e28-5b73-458a-b188-c0eefa80f35d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -74,7 +74,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Funky"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""b87c6ff6-46a6-4f52-a14c-61cae71ce906"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -92,7 +92,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Ability"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""465c219f-0ff0-4f10-9411-cbfa36198321"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -101,7 +101,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Jump"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""78a90f44-2211-4466-b701-e76a22fbd2f0"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -212,7 +212,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""85395344-9c0c-4180-88b8-3230a9ceaef5"",
-                    ""path"": ""<Keyboard>/backquote"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
