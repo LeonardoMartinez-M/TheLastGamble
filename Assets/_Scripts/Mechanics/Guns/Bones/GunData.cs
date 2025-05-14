@@ -11,11 +11,11 @@ namespace _Scripts.Mechanics.Guns.Bones
     }
 
     [CreateAssetMenu(fileName = "Gun Info", menuName = "Stats/GunStats")]
-    public partial class GunData : ScriptableObject
+    public class GunData : ScriptableObject
     {
         [Header("Frame")]
         private MonoScript _controller;
-        public IGunsGeneral abilityScript;
+        public IGunsGeneral AbilityScript;
 
         [Header("Ability Modifiers")]
         public bool canStun;
@@ -27,10 +27,12 @@ namespace _Scripts.Mechanics.Guns.Bones
         public bool hasShrapnel;
 
         [Header("Combat Stats")]
-        //chance of an effect happening
+        
+        public long barMax;
         public int chance;
         // damage
         [FormerlySerializedAs("_damage")] [SerializeField] private long damage;
+        
         public long Damage
         {
             get => damage;
@@ -66,14 +68,27 @@ namespace _Scripts.Mechanics.Guns.Bones
 
         public void ActivateAbility()
         {
-            abilityScript.ApplyEffect();
+            AbilityScript.ApplyEffect();
         }
         
         private void OnValidate()
         {
             UpdateDamage(); // Recalculate damage in the editor when values change
         }
-
+        public void Ability()
+        {
+            if (abilityBar>=barMax)
+            {
+                Debug.Log("Ability: "+name+" activated");
+                abilityBar = 0;
+                Debug.Log("Ability is attempting to change the gun data");
+            }
+            else
+            {
+                Debug.Log("Not enough Ability score");
+            }
+        
+        }
         private void UpdateDamage()
         {
             Damage = (long)(totalDamage / Mathf.Max(1, magSize));
