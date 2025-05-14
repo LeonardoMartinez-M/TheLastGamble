@@ -75,20 +75,7 @@ namespace _Scripts.Mechanics.Guns.Bones
         {
             UpdateDamage(); // Recalculate damage in the editor when values change
         }
-        public void Ability()
-        {
-            if (abilityBar>=barMax)
-            {
-                Debug.Log("Ability: "+name+" activated");
-                abilityBar = 0;
-                Debug.Log("Ability is attempting to change the gun data");
-            }
-            else
-            {
-                Debug.Log("Not enough Ability score");
-            }
         
-        }
         private void UpdateDamage()
         {
             Damage = (long)(totalDamage / Mathf.Max(1, magSize));
@@ -134,8 +121,8 @@ namespace _Scripts.Mechanics.Guns.Bones
         public int Sway { get; set; }
         public int Recoil { get; set; }
     }
-
-// Another example
+    
+    // Another example
     public class DamageBoostAbility : MonoBehaviour, IGunsGeneral
     {
         public float damageMultiplier = 1.5f;

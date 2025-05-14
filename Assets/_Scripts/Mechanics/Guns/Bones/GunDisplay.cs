@@ -5,6 +5,7 @@ using _Scripts.Mechanics.Guns.Bones;
 public class GunDisplay : MonoBehaviour
 {
     public GunData gun;
+    public IGunsGeneral iGunsgeneral;
     private GunController gunController; // Renamed to clarify its purpose
 
         public long OneShot()
@@ -94,6 +95,22 @@ public class GunDisplay : MonoBehaviour
             return 0;
         }
 
+        public void Ability()
+        {
+            if (gun.abilityBar>=gun.barMax)
+            {
+                Debug.Log("Ability: "+name+" activated");
+                gun.abilityBar = 0;
+                Debug.Log("Ability is attempting to change the gun data");
+                iGunsgeneral.ApplyEffect();
+            }
+            else
+            {
+                Debug.Log("Not enough Ability score");
+            }
+        
+        }
+        
         private void Start()
         {
             gun.barMax = gun.abilityTrigger;
