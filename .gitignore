@@ -117,3 +117,9 @@ Assets/Wall Textures/
 
 # Corresponding META files
 Assets/Wall Textures.meta
+
+#Custom ignore folders
+Assets/TestingStuff/
+
+# Corresponding META files
+Assets/TestingStuff.meta
