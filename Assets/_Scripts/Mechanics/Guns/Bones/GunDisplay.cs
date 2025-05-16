@@ -1,11 +1,12 @@
 using UnityEngine;
 using System;
 using _Scripts.Mechanics.Guns.Bones;
+using UnityEngine.Events;
 
 public class GunDisplay : MonoBehaviour
 {
     public GunData gun;
-    public IGunsGeneral iGunsgeneral;
+    public UnityEvent iGunsGeneral;
     public GunController gunController; // Renamed to clarify its purpose
 
         public long OneShot()
@@ -43,14 +44,13 @@ public class GunDisplay : MonoBehaviour
         {
             if (gun != null)
             {
-                gun.Damage *= adjustment;
+               return gun.Damage = adjustment;
             }
             else
             {
                 Debug.LogError("GunData is not assigned in GunDisplay.");
+                return 0;
             }
-
-            return 0;
         }
 
         public int AdjustMag(int mag)
@@ -102,13 +102,12 @@ public class GunDisplay : MonoBehaviour
                 Debug.Log("Ability: "+name+" activated");
                 gun.abilityBar = 0;
                 Debug.Log("Ability is attempting to change the gun data");
-                iGunsgeneral.ApplyEffect();
+                if (iGunsGeneral == null)
+                {
+                    Debug.Log("IGunsGeneral is null");
+                }
+                iGunsGeneral.Invoke();
             }
-            else
-            {
-                Debug.Log("Not enough Ability score");
-            }
-        
         }
         
         private void Start()
