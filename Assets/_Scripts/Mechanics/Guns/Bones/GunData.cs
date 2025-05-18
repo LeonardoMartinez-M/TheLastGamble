@@ -18,6 +18,8 @@ namespace _Scripts.Mechanics.Guns.Bones
         public IGunsGeneral AbilityScript;
 
         [Header("Ability Modifiers")]
+        public long abilityBarMax;
+        public int chance;
         public bool canStun;
         public bool canDing;
         public bool canImpair;
@@ -27,12 +29,11 @@ namespace _Scripts.Mechanics.Guns.Bones
         public bool hasShrapnel;
 
         [Header("Combat Stats")]
-        
-        public long barMax;
-        public int chance;
+        public long damageDone;
+        public int magazineSize;
+        public int currentMagazine;
+        public long damage;
         // damage
-        [FormerlySerializedAs("_damage")] [SerializeField] private long damage;
-        
         public long Damage
         {
             get => damage;

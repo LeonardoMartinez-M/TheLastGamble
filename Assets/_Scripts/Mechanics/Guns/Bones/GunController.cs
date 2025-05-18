@@ -16,11 +16,12 @@ namespace _Scripts.Mechanics.Guns.Bones
         [SerializeField] private Transform sight;
 
         [Header("Operational State")] 
-        [SerializeField] private bool abilityActivated;
+        [SerializeField]
+        public bool abilityActivated;
         [SerializeField] private bool cobained;
         [SerializeField] private bool canFire;
         [SerializeField] private bool triggerDown;
-        [SerializeField] private bool reloading;
+        [SerializeField] public bool reloading;
 
         [Header("Ammo Info")] 
         [SerializeField] public int ammoInMag;
@@ -47,18 +48,14 @@ namespace _Scripts.Mechanics.Guns.Bones
         // Start is called before the first frame update
         void Start()
         {
-       
-
-        
-            // initialize the audio source
-            // initialize the animator
-        
-            // cache the original position and rotation to reset to after recoiling/adsing
-            //originalPosition = transform.localPosition;
-            //originalRotation = transform.localRotation;
-
-//        aimPosition = data.aimPosition;
-    }
+            //initialize the audio source
+            //initialize the animator
+      
+            //cache the original position and rotation to reset to after recoiling/adsing
+            originalPosition = transform.localPosition;
+            originalRotation = transform.localRotation;
+            aimPosition = data.aimPosition;
+        }
 
         // Update is called once per frame
         void Update()

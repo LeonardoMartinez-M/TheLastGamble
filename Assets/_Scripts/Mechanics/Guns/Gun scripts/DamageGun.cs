@@ -7,9 +7,9 @@ public class DamageGun : MonoBehaviour
     public GunData GunInfo;
     public GunController gunController;
     public long damageDone;
-    private int currentMagazine;
     private int magazineSize;
- 
+    private int currentMagazine;
+
     public long damage
     {
         get
@@ -88,13 +88,13 @@ public class DamageGun : MonoBehaviour
         }
         else
         {
-            if (GunInfo.abilityBar<GunInfo.barMax)
+            if (GunInfo.abilityBar<GunInfo.abilityBarMax)
             {
                 GunInfo.abilityBar += 100;
             }
             
 
-            Debug.Log("gun has been fired. In Mag: " + currentMagazine+". Ability Progress: "+GunInfo.abilityBar+" of "+(long)GunInfo.barMax);
+            Debug.Log("gun has been fired. In Mag: " + currentMagazine+". Ability Progress: "+GunInfo.abilityBar+" of "+(long)GunInfo.abilityBarMax);
             currentMagazine--;
             Ray gunRay = new Ray(PlayerCamera.position, PlayerCamera.forward);
             if (Physics.Raycast(gunRay, out RaycastHit hitInfo, BulletRange))

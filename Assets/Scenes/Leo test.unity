@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -716,51 +716,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4472360399580177492}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1191092652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191092647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91471f0b4147b2348b62a41b959da9b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gun: {fileID: 11400000, guid: 366873478472ee3458dfbeb5405d2b0b, type: 2}
-  iGunsGeneral:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1191092660}
-        m_TargetAssemblyTypeName: RouletteWheel, Assembly-CSharp
-        m_MethodName: ApplyEffect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gunController: {fileID: 1191092654}
---- !u!114 &1191092653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191092647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4989e5a188939454586b85bb1fbd00ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GunInfo: {fileID: 11400000, guid: 366873478472ee3458dfbeb5405d2b0b, type: 2}
-  gunController: {fileID: 1191092654}
-  damageDone: 10
-  PlayerCamera: {fileID: 799318094}
 --- !u!114 &1191092654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,7 +761,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: 366873478472ee3458dfbeb5405d2b0b, type: 2}
-  targetGunDisplay: {fileID: 1191092652}
+  targetWeaponModel: {fileID: 1191092662}
+--- !u!114 &1191092662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191092647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14523ea91e5431e4e998316392da6fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 366873478472ee3458dfbeb5405d2b0b, type: 2}
+  gunController: {fileID: 1191092654}
+  iGunsGeneral:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1191092662}
+        m_TargetAssemblyTypeName: WeaponModel, Assembly-CSharp
+        m_MethodName: Ability
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  PlayerCamera: {fileID: 799318094}
 --- !u!1 &1571838187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,7 +1214,7 @@ PrefabInstance:
         type: 3}
       propertyPath: guns
       value: 
-      objectReference: {fileID: 1191092652}
+      objectReference: {fileID: 0}
     - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
         type: 3}
       propertyPath: FireCooldown
@@ -1242,19 +1227,109 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
         type: 3}
+      propertyPath: OnGunShoot.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunReload.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunAbility.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunReload.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunAbility.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
       propertyPath: OnGunShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1191092653}
+      objectReference: {fileID: 1191092662}
     - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
         type: 3}
       propertyPath: OnGunReload.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1191092653}
+      objectReference: {fileID: 1191092662}
     - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
         type: 3}
       propertyPath: OnGunAbility.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1191092652}
+      objectReference: {fileID: 1191092662}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunShoot.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunReload.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunShoot.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Shoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunAbility.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunReload.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reload
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunAbility.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Ability
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunShoot.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WeaponModel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunReload.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WeaponModel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunAbility.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WeaponModel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunReload.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: OnGunAbility.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8160689487093880818, guid: fe43019f9b8097c4b80a90449df17af8,
         type: 3}
       propertyPath: m_Name
@@ -1268,11 +1343,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6953305008336520091, guid: fe43019f9b8097c4b80a90449df17af8,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1191092653}
-    - targetCorrespondingSourceObject: {fileID: 6953305008336520091, guid: fe43019f9b8097c4b80a90449df17af8,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1191092652}
+      addedObject: {fileID: 1191092662}
     - targetCorrespondingSourceObject: {fileID: 6953305008336520091, guid: fe43019f9b8097c4b80a90449df17af8,
         type: 3}
       insertIndex: -1
