@@ -15,7 +15,7 @@ namespace _Scripts.Mechanics.Guns.Bones
     {
         [Header("Frame")]
         private MonoScript _controller;
-        public Object abilityScript;
+        public IGunsGeneral AbilityScript;
 
         [Header("Ability Modifiers")]
         public bool canStun;
@@ -27,10 +27,12 @@ namespace _Scripts.Mechanics.Guns.Bones
         public bool hasShrapnel;
 
         [Header("Combat Stats")]
-        //chance of an effect happening
+        
+        public long barMax;
         public int chance;
         // damage
         [FormerlySerializedAs("_damage")] [SerializeField] private long damage;
+        
         public long Damage
         {
             get => damage;
@@ -64,11 +66,16 @@ namespace _Scripts.Mechanics.Guns.Bones
             UpdateDamage(); // Calculate initial damage
         }
 
+        public void ActivateAbility()
+        {
+            AbilityScript.ApplyEffect();
+        }
+        
         private void OnValidate()
         {
             UpdateDamage(); // Recalculate damage in the editor when values change
         }
-
+        
         private void UpdateDamage()
         {
             Damage = (long)(totalDamage / Mathf.Max(1, magSize));
@@ -114,8 +121,8 @@ namespace _Scripts.Mechanics.Guns.Bones
         public int Sway { get; set; }
         public int Recoil { get; set; }
     }
-
-// Another example
+    
+    // Another example
     public class DamageBoostAbility : MonoBehaviour, IGunsGeneral
     {
         public float damageMultiplier = 1.5f;

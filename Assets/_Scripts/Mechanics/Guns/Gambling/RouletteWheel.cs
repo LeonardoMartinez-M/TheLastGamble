@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Mechanics.Guns.Bones;
@@ -8,6 +9,7 @@ using Random = Unity.Mathematics.Random;
 public class RouletteWheel : MonoBehaviour, IGunsGeneral
 {
     private int _EffectRoll;
+    [SerializeField] private GunData gunData;
     [SerializeField] private GunDisplay targetGunDisplay;
     private enum Wheel
     {
@@ -54,20 +56,18 @@ public class RouletteWheel : MonoBehaviour, IGunsGeneral
     }
 
     private Wheel _wheel;
-    
-    public RouletteWheel()
+
+    public void wakeUpRetard()
     {
         Random rand = new Random();
-        _wheel = (Wheel)rand.NextInt(1,39);
-    }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        ApplyEffect();
+        
+        int num = rand.NextInt(1, 39);
+        Debug.Log("Rolling new value: " + num);
+        _wheel = (Wheel)num;
     }
 
-    
+    // Start is called before the first frame update
+
     public bool IsActive { get; set; }
     public int Damage { get; set; }
     public int ADSSway { get; set; }
@@ -76,6 +76,9 @@ public class RouletteWheel : MonoBehaviour, IGunsGeneral
 
     public void ApplyEffect()
     {
+        wakeUpRetard();
+        int mag = 0;
+        long damageChange=0;
             Debug.Log("ApplyEffect has been called");
 
             if (targetGunDisplay == null)
@@ -88,13 +91,13 @@ public class RouletteWheel : MonoBehaviour, IGunsGeneral
             Debug.Log($"Calculated bonusDamage: {bonusDamage}");
 
             Debug.Log($"Current _wheel value: {_wheel}");
-            int mag = (int)_wheel;
-            Debug.Log($"Casted mag value: {mag}");
+            mag += (int)_wheel;
+            Debug.Log($"Casted mag value: {(int)_wheel}");
 
-                long damage = bonusDamage / mag;
-                Debug.Log($"Calculated damage: {damage}");
-                targetGunDisplay.AdjustDamage(damage);
-                Debug.Log($"Called targetGunDisplay.AdjustDamage({damage})");
+                 damageChange += (bonusDamage/mag);
+                Debug.Log($"Calculated damage: {damageChange}");
+                targetGunDisplay.AdjustDamage(damageChange);
+                Debug.Log($"Called targetGunDisplay.AdjustDamage({damageChange})");
                 targetGunDisplay.AdjustMag(mag);
             Debug.Log($"Called targetGunDisplay.AdjustMag({mag})");
         }

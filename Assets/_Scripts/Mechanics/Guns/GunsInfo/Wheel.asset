@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24a9a358f6ae57458b4631cf382ae80, type: 3}
   m_Name: Wheel
   m_EditorClassIdentifier: 
-  abilityScript: {fileID: 11500000, guid: 8b0a0daae1f4b0d47a2b129f22255516, type: 3}
   canStun: 0
   canDing: 0
   canImpair: 0
@@ -20,10 +19,11 @@ MonoBehaviour:
   canPen: 0
   canBurn: 0
   hasShrapnel: 0
+  barMax: 1000
   chance: 0
   damage: 10
   totalDamage: 390
-  fireRate: 850
+  fireRate: 0.05
   reloadSpeed: 10
   magSize: 39
   spareAmmo: 210

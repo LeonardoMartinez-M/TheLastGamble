@@ -157,10 +157,5 @@ namespace _Scripts.Mechanics.Guns.Bones
     
         #endregion
     
-        #region Sway
-
-   
-    
-        #endregion
     }
 }

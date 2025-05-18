@@ -5,10 +5,11 @@ using UnityEngine;
 public class DamageGun : MonoBehaviour
 {
     public GunData GunInfo;
+    public GunController gunController;
     public long damageDone;
     private int currentMagazine;
     private int magazineSize;
-    private long barMax;
+ 
     public long damage
     {
         get
@@ -54,7 +55,7 @@ public class DamageGun : MonoBehaviour
    
     private void Start()
     {
-        barMax = GunInfo.abilityTrigger;
+        
         magazineSize = (int)GunInfo.magSize;
         currentMagazine = (int)GunInfo.magSize;
         Debug.Log(gameObject.name + " has started.");
@@ -62,20 +63,7 @@ public class DamageGun : MonoBehaviour
     }
 
 
-    public void Ability()
-    {
-        if (GunInfo.abilityBar>=barMax)
-        {
-            Debug.Log("Ability: "+GunInfo.name+" activated");
-            GunInfo.abilityBar = 0;
-            Debug.Log("Ability is attempting to change the gun data");
-        }
-        else
-        {
-            Debug.Log("Not enough Ability score");
-        }
-        
-    }
+ 
    
     public void Reload()
     {
@@ -100,11 +88,13 @@ public class DamageGun : MonoBehaviour
         }
         else
         {
-            if (GunInfo.abilityBar<barMax)
+            if (GunInfo.abilityBar<GunInfo.barMax)
             {
                 GunInfo.abilityBar += 100;
             }
-            Debug.Log("gun has been fired. In Mag: " + currentMagazine+". Ability Progress: "+GunInfo.abilityBar+" of "+barMax);
+            
+
+            Debug.Log("gun has been fired. In Mag: " + currentMagazine+". Ability Progress: "+GunInfo.abilityBar+" of "+(long)GunInfo.barMax);
             currentMagazine--;
             Ray gunRay = new Ray(PlayerCamera.position, PlayerCamera.forward);
             if (Physics.Raycast(gunRay, out RaycastHit hitInfo, BulletRange))
