@@ -26,8 +26,6 @@ public class Entity : MonoBehaviour
             return 0;
         }
         health -= amount;
-        Debug.Log(gameObject.name + "'s Health reduced to " + health);
-
         if (damageTickPrefab != null)
         {
             ShowFloatingText(amount);

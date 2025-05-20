@@ -97,7 +97,7 @@ public class GunDisplay : MonoBehaviour
 
         public void Ability()
         {
-            if (gun.abilityBar>=gun.barMax)
+            if (gun.abilityBar>=gun.abilityBarMax)
             {
                 Debug.Log("Ability: "+name+" activated");
                 gun.abilityBar = 0;
@@ -112,7 +112,7 @@ public class GunDisplay : MonoBehaviour
         
         private void Start()
         {
-            gun.barMax = gun.abilityTrigger;
+            gun.abilityBarMax = gun.abilityTrigger;
             gunController = GetComponent<GunController>();
             if (gunController == null)
             {
