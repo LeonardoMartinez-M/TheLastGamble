@@ -1,5 +1,6 @@
 using _Scripts.Mechanics.Guns.Bones;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = System.Random;
 
 public class Roulette : MonoBehaviour, IGunsGeneral
@@ -14,7 +15,7 @@ public class Roulette : MonoBehaviour, IGunsGeneral
         Six = 6
     }
 
-    [SerializeField] private GunDisplay gunDisplay; // Get a reference to the GunDisplay instance
+    [SerializeField] private WeaponModel weaponModel; // Get a reference to the GunDisplay instance
 
   
 
@@ -34,13 +35,13 @@ public class Roulette : MonoBehaviour, IGunsGeneral
 
     public void ApplyEffect()
     {
-        if (gunDisplay != null)
+        if (weaponModel != null)
         {
             // Access GetCurrentMag() through the instance
-            if ((int)_bullet == gunDisplay.GetCurrentMag())
+            if ((int)_bullet == weaponModel.GetCurrentMag())
             {
                 // Access OneShot() through the instance
-                gunDisplay.OneShot();
+                weaponModel.OneShot();
             }
         }
     }

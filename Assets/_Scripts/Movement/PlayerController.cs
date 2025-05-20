@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private DamageGun _damageGun;
+    [SerializeField] private WeaponModel _damageGun;
     [SerializeField]
     private float playerSpeed = 2.0f;
     [SerializeField]

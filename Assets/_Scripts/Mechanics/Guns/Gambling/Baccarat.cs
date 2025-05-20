@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Baccarat : MonoBehaviour, IGunsGeneral
 {
-    [SerializeField] private GunDisplay targetGunDisplay;
+    [SerializeField] private WeaponModel targetGunDisplay;
     private _CardData _cardA;
     private _CardData _cardB;
     private int _handTotal;

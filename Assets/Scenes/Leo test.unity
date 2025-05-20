@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -776,12 +776,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 366873478472ee3458dfbeb5405d2b0b, type: 2}
   gunController: {fileID: 1191092654}
-  iGunsGeneral:
+  weaponAbilityPrefab:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1191092662}
-        m_TargetAssemblyTypeName: WeaponModel, Assembly-CSharp
-        m_MethodName: Ability
+      - m_Target: {fileID: 1191092660}
+        m_TargetAssemblyTypeName: RouletteWheel, Assembly-CSharp
+        m_MethodName: ApplyEffect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1214,6 +1214,11 @@ PrefabInstance:
         type: 3}
       propertyPath: guns
       value: 
+      objectReference: {fileID: 1191092662}
+    - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
+        type: 3}
+      propertyPath: Automatic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7142654847513117981, guid: fe43019f9b8097c4b80a90449df17af8,
         type: 3}

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour, IGunsGeneral
 {
-    [SerializeField] private GunDisplay targetGunDisplay;
+    [SerializeField] private WeaponModel targetGunDisplay;
     private _SlotData slotOne;
     private _SlotData slotTwo;
     private _SlotData slotThree;

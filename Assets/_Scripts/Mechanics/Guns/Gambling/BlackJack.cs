@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlackJack : MonoBehaviour, IGunsGeneral
 {
-    [SerializeField] private GunDisplay targetGunDisplay;
+    [SerializeField] private WeaponModel targetGunDisplay;
     // make a variable for input manager
     // declare two cards
     

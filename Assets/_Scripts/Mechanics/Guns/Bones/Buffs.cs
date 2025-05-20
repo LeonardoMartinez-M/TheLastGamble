@@ -5,19 +5,19 @@ namespace _Scripts.Mechanics.Guns.Bones
     public class Buffs : MonoBehaviour
     {
         //helps balance out ability usage and makes it more reasonable of it being applied
-        public static void Chance(GunDisplay gunDisplay, int i)
+        public static void Chance(WeaponModel weaponModel, int i)
         {
-            if (gunDisplay != null)
+            if (weaponModel != null)
             {
-                gunDisplay.AdjustChance(i); // Call the method on the instance
+                weaponModel.AdjustChance(i); // Call the method on the instance
             }
         }
 
-        public static void Damage(GunDisplay gunDisplay, long damageAdjustment)
+        public static void Damage(WeaponModel weaponModel, long damageAdjustment)
         {
-            if (gunDisplay != null)
+            if (weaponModel != null)
             {
-                gunDisplay.AdjustDamage(damageAdjustment); // Call the method on the instance
+                weaponModel.AdjustDamage(damageAdjustment); // Call the method on the instance
             }
         }
 //will be used to affect enemy and player, severity and time will be applicable in EnemyDisplay, and somewhere in player information
@@ -26,34 +26,34 @@ namespace _Scripts.Mechanics.Guns.Bones
     
         }
         //gun modifications implemented by abilities
-        public static void RapidFire(GunDisplay gunDisplay, int speed)
+        public static void RapidFire(WeaponModel weaponModel, int speed)
         {
-            if (gunDisplay != null)
+            if (weaponModel != null)
             {
-                gunDisplay.AdjustFireRate(speed);
+                weaponModel.AdjustFireRate(speed);
             }
         }
 
-        public static void ArmorPen(GunDisplay gunDisplay, long damageAdjustment)
+        public static void ArmorPen(WeaponModel weaponModel, long damageAdjustment)
         {
-            gunDisplay.AdjustDamage(damageAdjustment);
-            gunDisplay.gun.canPen = true;
+            weaponModel.AdjustDamage(damageAdjustment);
+            weaponModel.weaponData.canPen = true;
         }
 
-        public static void Ding(GunDisplay gunDisplay)
+        public static void Ding(WeaponModel weaponModel)
         {
-            gunDisplay.gun.canDing = true;
+            weaponModel.weaponData.canDing = true;
         }
 
-        public static void Shrapnel(GunDisplay targetGunDisplay)
+        public static void Shrapnel(WeaponModel targetGunDisplay)
         {
             targetGunDisplay.AdjustDamage(5);
-            targetGunDisplay.gun.hasShrapnel = true;
+            targetGunDisplay.weaponData.hasShrapnel = true;
         }
 
-        public static void Explosive(GunDisplay targetGunDisplay)
+        public static void Explosive(WeaponModel targetWeaponModel)
         {
-            targetGunDisplay.gun.isExplosive = true;
+            targetWeaponModel.weaponData.isExplosive = true;
         }
 //used on player if you roll OP ability on weapon
         public static void SelfDamage(int percentDamage)
@@ -61,20 +61,20 @@ namespace _Scripts.Mechanics.Guns.Bones
         
         }
         //used for enemies  
-        public static void Stun(GunDisplay gunDisplay,int duration)
+        public static void Stun(WeaponModel weaponModel,int duration)
         {
-            gunDisplay.gun.canStun = true;
-            gunDisplay.gun.stunDuration = duration;
+            weaponModel.weaponData.canStun = true;
+            weaponModel.weaponData.stunDuration = duration;
         }
 //used for player on OP things
-        public static void Impair(GunDisplay gunDisplay,int severity, int duration)
+        public static void Impair(WeaponModel weaponModel,int severity, int duration)
         {
-            gunDisplay.gun.canImpair = true;
-            gunDisplay.gun.impairDuration = duration;
-            gunDisplay.gun.impairSeverity = severity;
+            weaponModel.weaponData.canImpair = true;
+            weaponModel.weaponData.impairDuration = duration;
+            weaponModel.weaponData.impairSeverity = severity;
         }
      
-        public static void Blunderbuss(GunDisplay gunDisplay,int type)
+        public static void Blunderbuss(WeaponModel weaponModel,int type)
         {
             switch (type)
             {

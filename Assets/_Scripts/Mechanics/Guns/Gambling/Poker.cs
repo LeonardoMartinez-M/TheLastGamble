@@ -9,7 +9,7 @@ using Debug = System.Diagnostics.Debug;
 public class Poker : MonoBehaviour, IGunsGeneral
 {
     private int _EffectRoll;
-    [SerializeField] private GunDisplay targetGunDisplay;
+    [SerializeField] private WeaponModel targetGunDisplay;
     public enum HandRank
     {
         Royal=1,

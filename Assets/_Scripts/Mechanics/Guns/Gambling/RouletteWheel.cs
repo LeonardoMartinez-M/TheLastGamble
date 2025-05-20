@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using _Scripts.Mechanics.Guns.Bones;
 using UnityEngine;
 using UnityEngine.Serialization;
-using random = System.Random;
-using Random = Unity.Mathematics.Random;
+using Random = UnityEngine.Random;
 
 public class RouletteWheel : MonoBehaviour, IGunsGeneral
 {
@@ -61,9 +60,10 @@ public class RouletteWheel : MonoBehaviour, IGunsGeneral
 
     public void wakeUpRetard()
     {
-        Random rand = new Random();
-
-        int num = rand.NextInt(1, 39);
+        Debug.Log("roullete wheel has been called");
+        
+        
+        int num = (int)((Random.value * 38) + 1);
         Debug.Log("Rolling new value: " + num);
         _wheel = (Wheel)num;
     }

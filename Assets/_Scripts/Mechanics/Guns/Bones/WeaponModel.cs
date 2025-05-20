@@ -11,7 +11,7 @@ public class WeaponModel : MonoBehaviour
 
         [SerializeField]public GunData weaponData;
         [SerializeField]public GunController gunController; 
-        [SerializeField]public IGunsGeneral weaponAbilityPrefab;
+        [SerializeField]public UnityEvent weaponAbilityPrefab;
         [SerializeField] private Transform PlayerCamera;
 
     #endregion
@@ -95,7 +95,7 @@ public class WeaponModel : MonoBehaviour
 
 
                 Debug.Log("gun has been fired. In Mag: " + weaponData.currentMagazine + ". Ability Progress: " +
-                          weaponData.abilityBar + " of " + (long)weaponData.abilityBarMax);
+                          weaponData.abilityBar + " of " + weaponData.abilityBarMax);
                 weaponData.currentMagazine--;
                 Ray gunRay = new Ray(PlayerCamera.position, PlayerCamera.forward);
                 if (Physics.Raycast(gunRay, out RaycastHit hitInfo, BulletRange))
@@ -217,7 +217,11 @@ public class WeaponModel : MonoBehaviour
                     {
                         Debug.Log("IGunsGeneral is null");
                     }
-                    weaponAbilityPrefab.Invoke();
+                    else
+                    {
+                        Debug.Log("gambling scripts has been called");
+                        weaponAbilityPrefab.Invoke();
+                    }
                 }
                 else
                 {
