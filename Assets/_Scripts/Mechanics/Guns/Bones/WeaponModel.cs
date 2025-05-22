@@ -11,7 +11,7 @@ public class WeaponModel : MonoBehaviour
 
         [SerializeField]public GunData weaponData;
         [SerializeField]public GunController gunController; 
-        [SerializeField]public IGunsGeneral weaponAbilityPrefab;
+        [SerializeField]public UnityEvent weaponAbilityPrefab;
         [SerializeField] private Transform PlayerCamera;
 
     #endregion
@@ -217,7 +217,10 @@ public class WeaponModel : MonoBehaviour
                     {
                         Debug.Log("IGunsGeneral is null");
                     }
-                    weaponAbilityPrefab.Invoke();
+                    else
+                    {
+                        weaponAbilityPrefab.Invoke();
+                    }
                 }
                 else
                 {

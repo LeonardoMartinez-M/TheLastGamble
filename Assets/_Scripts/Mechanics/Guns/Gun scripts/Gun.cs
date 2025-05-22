@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Gun : MonoBehaviour
 {
-    public GunDisplay guns;
+    public WeaponModel guns;
     public UnityEvent OnGunShoot;
     public UnityEvent OnGunReload; // New event for reload
     public UnityEvent OnGunAbility; // New event for 'F' key
@@ -22,7 +22,7 @@ public class Gun : MonoBehaviour
 
     private void OnValidate()
     {
-        FireCooldown = (float)guns.gun.fireRate;
+        FireCooldown = (float)guns.weaponData.fireRate;
         if (CurrentCooldown!=FireCooldown)
         {
             CurrentCooldown = FireCooldown;
@@ -58,7 +58,7 @@ public class Gun : MonoBehaviour
                 if (CurrentCooldown <= 0f)
                 {
                     OnGunShoot?.Invoke();
-                    CurrentCooldown = FireCooldown;
+                   
                 }
             }
         }
